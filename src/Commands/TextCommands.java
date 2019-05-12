@@ -6,10 +6,18 @@ import net.dv8tion.jda.core.entities.Member;
 import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.entities.User;
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
+import net.dv8tion.jda.core.hooks.EventListener;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Random;
+import java.util.stream.Stream;
 
 public class TextCommands extends ListenerAdapter{
     public void onGuildMessageReceived(GuildMessageReceivedEvent event){
@@ -27,11 +35,18 @@ public class TextCommands extends ListenerAdapter{
         else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "info")){
             getUserInfo(event);
         }
+        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "quote")){
+            randomQuote(event);
+        }
     }
 
     public void arrive(GuildMessageReceivedEvent event){
-        event.getChannel().sendTyping().queue();
-        event.getChannel().sendMessage("Dread it. Run from it. Destiny arrives all the same. And now, it's here. Or should I say, I am.").queue();
+        EmbedBuilder arrival = new EmbedBuilder();
+        arrival.setColor(0x6F3C89);
+        arrival.setTitle("Dread it. Run from it. Destiny arrives all the same. And now, it's here. Or should I say, I am.");
+        arrival.setImage("https://i.imgur.com/SMsNJN6.jpg");
+        arrival.setFooter("Created by Thanos", "https://i.imgur.com/SMsNJN6.jpg");
+        event.getChannel().sendMessage(arrival.build()).queue();
     }
 
     public void snapMessages(GuildMessageReceivedEvent event){
@@ -125,6 +140,7 @@ public class TextCommands extends ListenerAdapter{
             event.getChannel().sendMessage(error.build()).queue();
         }
     }
+
     public void getUserInfo(GuildMessageReceivedEvent event){
         String[] args = event.getMessage().getContentRaw().split("\\s+");
 
@@ -162,7 +178,7 @@ public class TextCommands extends ListenerAdapter{
                 userInfo.addField("Game: ", user.getGame() == null ? "N/A" : user.getGame().isRich() ? "N/A"  : user.getGame().toString(), true);
                 userInfo.addField("Listening to: ", user.getGame() == null ? "N/A": !user.getGame().isRich() ? "N/A" : user.getGame().asRichPresence().getDetails(), true);
                 userInfo.addField("Artist: ", user.getGame() == null ? "N/A": !user.getGame().isRich() ? "N/A" : user.getGame().asRichPresence().getState(), true);
-                userInfo.setFooter("Created by: " + user.getUser().getName(), event.getAuthor().getAvatarUrl());
+                userInfo.setFooter("Created by: " + event.getAuthor().getName(), event.getAuthor().getAvatarUrl());
                 event.getChannel().sendMessage(userInfo.build()).queue();
 
             }
@@ -174,5 +190,32 @@ public class TextCommands extends ListenerAdapter{
                 event.getChannel().sendMessage(error.build()).queue();
             }
         }
+    }
+
+    public void randomQuote(GuildMessageReceivedEvent event){
+        //File file = new File("quotes.txt");
+        try (Stream<String> lines = Files.lines(Paths.get("C:\\Users\\Brandon\\Desktop\\Discord-Bot\\src\\quotes.txt"))) {
+            Stream<String> lines2 = Files.lines(Paths.get("C:\\Users\\Brandon\\Desktop\\Discord-Bot\\src\\quotes.txt"));
+            Random rand = new Random();
+            int n1 = rand.nextInt(18) + 1;
+            int n2 = (2 * n1) - 2;
+            String line1 = lines.skip(n2).findFirst().get();
+            String line2 = lines2.skip(n2 + 1).findFirst().get();
+
+            EmbedBuilder quote = new EmbedBuilder();
+            quote.setColor(0x6F3C89);
+            quote.setTitle("Random Quote");
+            quote.setDescription(line1);
+            quote.setFooter(line2,"https://t7.rbxcdn.com/51f6b12d75ae04e2864633677ec9fa24");
+            event.getChannel().sendMessage(quote.build()).queue();
+        }
+        catch (IOException e){
+            EmbedBuilder error = new EmbedBuilder();
+            error.setColor(0x6F3C89);
+            error.setTitle("Error");
+            error.setDescription("Yea idk wtf happened");
+            event.getChannel().sendMessage(error.build()).queue();
+        }
+
     }
 }

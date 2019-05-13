@@ -4,13 +4,8 @@ import MainFiles.DiscordBot;
 import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.entities.Member;
 import net.dv8tion.jda.core.entities.Message;
-import net.dv8tion.jda.core.entities.User;
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
-import net.dv8tion.jda.core.hooks.EventListener;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
-
-import java.awt.*;
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -19,9 +14,13 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Stream;
 
+
+
 public class TextCommands extends ListenerAdapter{
+
     public void onGuildMessageReceived(GuildMessageReceivedEvent event){
         String[] args = event.getMessage().getContentRaw().split("\\s+");
+        MusicCommands music = new MusicCommands();
 
         if (args[0].equalsIgnoreCase(DiscordBot.prefix + "arrive")){
             arrive(event);
@@ -37,6 +36,18 @@ public class TextCommands extends ListenerAdapter{
         }
         else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "quote")){
             randomQuote(event);
+        }
+        else if(args[0].equalsIgnoreCase(DiscordBot.prefix + "f")){
+            payRespects(event);
+        }
+        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "join")){
+            music.join(event);
+        }
+        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "leave")){
+            music.leave(event);
+        }
+        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "play")){
+            music.playSong(event);
         }
     }
 
@@ -217,5 +228,18 @@ public class TextCommands extends ListenerAdapter{
             event.getChannel().sendMessage(error.build()).queue();
         }
 
+    }
+
+    public void payRespects(GuildMessageReceivedEvent event){
+        String[] args = event.getMessage().getContentRaw().split("\\s+");
+
+        if (args.length == 1){
+            Member user = event.getMember();
+            EmbedBuilder respect = new EmbedBuilder();
+            respect.setColor(0x6F3C89);
+            respect.setTitle("You have my respect, " + (user.getNickname() == null ? "N/A" : user.getNickname()) + ". When I'm done, half of humanity will still be alive. I hope they remember you.");
+            respect.setImage("https://media.giphy.com/media/26gR1v0rIDrjSsca4/giphy.gif");
+            event.getChannel().sendMessage(respect.build()).queue();
+        }
     }
 }

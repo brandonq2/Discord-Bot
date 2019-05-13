@@ -2,6 +2,7 @@ package Commands;
 
 import MainFiles.DiscordBot;
 import net.dv8tion.jda.core.EmbedBuilder;
+import net.dv8tion.jda.core.Permission;
 import net.dv8tion.jda.core.entities.Member;
 import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
@@ -25,7 +26,7 @@ public class TextCommands extends ListenerAdapter{
         if (args[0].equalsIgnoreCase(DiscordBot.prefix + "arrive")){
             arrive(event);
         }
-        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "snap")){
+        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "snap") && event.getMember().hasPermission(Permission.ADMINISTRATOR)){
             snapMessages(event);
         }
         else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "avatar")){
@@ -49,11 +50,14 @@ public class TextCommands extends ListenerAdapter{
         else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "play") || args[0].equalsIgnoreCase(DiscordBot.prefix + "p")){
             music.playSong(event);
         }
-        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "stop") || args[0].equalsIgnoreCase(DiscordBot.prefix + "s")){
+        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "stop")){
             music.stop(event);
         }
         else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "queue") || args[0].equalsIgnoreCase(DiscordBot.prefix + "q")){
             music.queue(event);
+        }
+        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "skip") || args[0].equalsIgnoreCase(DiscordBot.prefix + "s")){
+            music.skip(event);
         }
     }
 
@@ -176,7 +180,7 @@ public class TextCommands extends ListenerAdapter{
             userInfo.addField("Game: ", user.getGame() == null ? "N/A" : user.getGame().asRichPresence().getName().equalsIgnoreCase("Spotify") ? "N/A" : user.getGame().asRichPresence().getName(), true);
             userInfo.addField("Listening to: ", user.getGame() == null ? "N/A": !user.getGame().asRichPresence().getName().equalsIgnoreCase("spotify") ? "N/A" : user.getGame().asRichPresence().getDetails(), true);
             userInfo.addField("Artist: ", user.getGame() == null ? "N/A": !user.getGame().asRichPresence().getName().equalsIgnoreCase("spotify") ? "N/A" : user.getGame().asRichPresence().getState(), true);
-            userInfo.setFooter("Created by: " + user.getUser().getName(), event.getAuthor().getAvatarUrl());
+            userInfo.setFooter("Requested by: " + user.getUser().getName(), event.getAuthor().getAvatarUrl());
             event.getChannel().sendMessage(userInfo.build()).queue();
         }
         else if (args.length == 2){

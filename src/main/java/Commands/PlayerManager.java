@@ -19,7 +19,7 @@ public class PlayerManager {
     private static PlayerManager INSTANCE;
     private final AudioPlayerManager pm;
     private final Map<Long, GuildMusicManager> mm;
-    public AudioTrack currentSong;
+    public String currentSongName = "";
 
     private PlayerManager(){
         this.mm = new HashMap<>();
@@ -51,8 +51,8 @@ public class PlayerManager {
 
     public void loadPlay(TextChannel channel, String url){
         GuildMusicManager musicManager = getGMM(channel.getGuild());
+          pm.loadItem(url, new AudioLoadResultHandler() {
 
-        pm.loadItemOrdered(musicManager, url, new AudioLoadResultHandler() {
             @Override
             public void trackLoaded(AudioTrack audioTrack) {
                 channel.sendMessage("Added to queue: " + audioTrack.getInfo().title).queue();
@@ -61,13 +61,13 @@ public class PlayerManager {
 
             @Override
             public void playlistLoaded(AudioPlaylist audioPlaylist) {
-                AudioTrack first = audioPlaylist.getSelectedTrack();
-
+                AudioTrack first = audioPlaylist.getTracks().remove(0);
                 if (first == null){
-                    currentSong = audioPlaylist.getTracks().get(0).makeClone();
+                    currentSongName = first.getInfo().title;
                     first = audioPlaylist.getTracks().remove(0);
                 }
-                channel.sendMessage("Playing: " + first.getInfo().title).queue();
+                currentSongName = first.getInfo().title;
+                channel.sendMessage("Added to Queue: " + first.getInfo().title).queue();
                 play(musicManager, first);
             }
 

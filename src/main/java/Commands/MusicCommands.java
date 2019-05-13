@@ -1,5 +1,6 @@
 package Commands;
 
+import com.sedmelluq.discord.lavaplayer.player.AudioPlayer;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrackInfo;
 import net.dv8tion.jda.core.EmbedBuilder;
@@ -12,6 +13,8 @@ import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.core.managers.AudioManager;
 
 import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -76,10 +79,17 @@ public class MusicCommands {
             return;
         }
         String url = args[1];
-        if (!URLCheck(url) && !url.startsWith("ytsearch:")){ // Might get blocked
-            channel.sendMessage("Please provide a valid link").queue();
+        if (!URLCheck(url)){ // Might get blocked
+            String yt = "ytsearch: ";
+            for (int i = 1; i < args.length; i++){
+                yt += args[i] + " ";
+            }
+            manager.loadPlay(event.getChannel(), yt);
+            manager.getGMM(event.getGuild()).player.setVolume(10);
             return;
         }
+
+
         manager.loadPlay(event.getChannel(), url);
         manager.getGMM(event.getGuild()).player.setVolume(10);
     }
@@ -99,7 +109,7 @@ public class MusicCommands {
         GuildMusicManager musicManager = manager.getGMM(event.getGuild());
         BlockingQueue<AudioTrack> queue = musicManager.scheduler.getQueue();
 
-        if (queue.isEmpty()){
+        if (queue.isEmpty() && musicManager.player.getPlayingTrack() == null){
             channel.sendMessage("Queue is empty").queue();
             return;
         }
@@ -107,21 +117,42 @@ public class MusicCommands {
         int count = Math.min(queue.size(), 10);
         List<AudioTrack> tracks = new ArrayList<>(queue);
         EmbedBuilder queueEmbed = new EmbedBuilder();
-        AudioTrack currentSong = manager.currentSong;
+        AudioTrack currentSong = musicManager.player.getPlayingTrack();
         AudioTrackInfo currentInfo = currentSong.getInfo();
 
         queueEmbed.setTitle("Current Queue Size: " + queue.size());
-        queueEmbed.addField("Currently Playing: ", currentInfo.title, true);
-        queueEmbed.addField("Uploader ", currentInfo.author, true);
+        queueEmbed.setColor(0x6F3C89);
+        queueEmbed.setThumbnail(getThumbnail(currentInfo));
+        queueEmbed.addField("Currently Playing: ", currentInfo.title, false);
+        queueEmbed.addField("Uploader: ", currentInfo.author, false);
 
+
+        String queued = "";
         for (int i = 0; i < count; i++){
             AudioTrack track = tracks.get(i);
             AudioTrackInfo info = track.getInfo();
-            queueEmbed.appendDescription(String.format("%d) %s   %s\n\n", i+1,info.title, info.author));
+            queued += "" + (i+1) + ") ";
+            queued += "Song Name: " + info.title + "\n" + "Uploaded By: " + info.author + "\n\n";
+        }
+        queueEmbed.addField("Queued Song:", queued, false);
+        queueEmbed.setFooter("Requested by: " + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
+        channel.sendMessage(queueEmbed.build()).queue();
+    }
+
+    public void skip(GuildMessageReceivedEvent event){
+        TextChannel channel = event.getChannel();
+        PlayerManager manager = PlayerManager.getINSTANCE();
+        GuildMusicManager musicManager = manager.getGMM(event.getGuild());
+        TrackScheduler scheduler = musicManager.scheduler;
+        AudioPlayer player = musicManager.player;
+
+        if (player.getPlayingTrack() == null){
+            channel.sendMessage("Nothing is playing").queue();
+            return;
         }
 
-        channel.sendMessage(queueEmbed.build()).queue();
-
+        scheduler.nextTrack();
+        channel.sendMessage("Song skipped").queue();
     }
 
     private boolean URLCheck(String url){
@@ -132,6 +163,18 @@ public class MusicCommands {
         catch (MalformedURLException e){
             return false;
         }
+    }
+
+    private String getThumbnail(AudioTrackInfo info) {
+        try {
+            URI uri = new URI(info.uri);
+            if (uri.getHost().contains("youtube.com") || uri.getHost().contains("youtu.be")) {
+                return String.format("https://img.youtube.com/vi/%s/0.jpg", info.identifier);
+            }
+        } catch (URISyntaxException e) {
+            // fall down
+        }
+        return null;
     }
 
 }

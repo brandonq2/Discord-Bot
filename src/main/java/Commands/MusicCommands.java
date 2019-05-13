@@ -1,17 +1,16 @@
 package Commands;
 
+import Handlers.GuildMusicManager;
+import Handlers.PlayerManager;
+import Handlers.TrackScheduler;
 import com.sedmelluq.discord.lavaplayer.player.AudioPlayer;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrackInfo;
 import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.Permission;
-import net.dv8tion.jda.core.entities.GuildVoiceState;
-import net.dv8tion.jda.core.entities.Member;
-import net.dv8tion.jda.core.entities.TextChannel;
-import net.dv8tion.jda.core.entities.VoiceChannel;
+import net.dv8tion.jda.core.entities.*;
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.core.managers.AudioManager;
-
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -25,16 +24,21 @@ public class MusicCommands {
     public void join (GuildMessageReceivedEvent event){
         TextChannel channel = event.getChannel();
         AudioManager audioManager = event.getGuild().getAudioManager();
+        EmbedBuilder embed = new EmbedBuilder();
 
         if (audioManager.isConnected()){
-            channel.sendMessage("Already Conncected").queue();
+            embed.setTitle(":no_entry: Already Connected");
+            embed.setColor(0x6F3C89);
+            channel.sendMessage(embed.build()).queue();
             return;
         }
 
         GuildVoiceState voiceState = event.getMember().getVoiceState();
 
         if (!voiceState.inVoiceChannel()){
-            channel.sendMessage("Please join a voice channel").queue();
+            embed.setTitle(":no_entry: Please join a voice channel");
+            embed.setColor(0x6F3C89);
+            channel.sendMessage(embed.build()).queue();
             return;
         }
 
@@ -42,40 +46,53 @@ public class MusicCommands {
         Member member = event.getGuild().getSelfMember();
 
         if (!member.hasPermission(vc, Permission.VOICE_CONNECT)){
-            channel.sendMessage("Missing perms").queue();
+            embed.setTitle(":no_entry: Insufficient Permissions");
+            embed.setColor(0x6F3C89);
             return;
         }
 
         audioManager.openAudioConnection(vc);
-        channel.sendMessage("Joining").queue();
+        embed.setTitle(":white_check_mark: Joining Voice Channel");
+        embed.setColor(0x6F3C89);
+        channel.sendMessage(embed.build()).queue();
     }
 
     public void leave (GuildMessageReceivedEvent event){
         TextChannel channel = event.getChannel();
         AudioManager audioManager = event.getGuild().getAudioManager();
+        EmbedBuilder embed = new EmbedBuilder();
 
         if (!audioManager.isConnected()){
-            channel.sendMessage("Not connected").queue();
+            embed.setTitle(":no_entry: Not Connected");
+            embed.setColor(0x6F3C89);
+            channel.sendMessage(embed.build()).queue();
             return;
         }
 
         VoiceChannel vc = audioManager.getConnectedChannel();
         if (!vc.getMembers().contains(event.getMember())){
-            channel.sendMessage("Must be in the same voice channel");
+            embed.setTitle(":no_entry: Must be in the same voice channel");
+            embed.setColor(0x6F3C89);
+            channel.sendMessage(embed.build()).queue();
             return;
         }
-
+        stop(event);
         audioManager.closeAudioConnection();
-        channel.sendMessage("Cya nerds").queue();
+        embed.setTitle(":v: Cya Nerds");
+        embed.setColor(0x6F3C89);
+        channel.sendMessage(embed.build()).queue();
     }
 
     public void playSong (GuildMessageReceivedEvent event){
         TextChannel channel = event.getChannel();
         String[] args = event.getMessage().getContentRaw().split("\\s+");
         PlayerManager manager = PlayerManager.getINSTANCE();
+        EmbedBuilder embed = new EmbedBuilder();
 
         if (args.length == 1){
-            channel.sendMessage("No song requested").queue();
+            embed.setTitle(":no_entry: No Song Requested");
+            embed.setColor(0x6F3C89);
+            channel.sendMessage(embed.build()).queue();
             return;
         }
         String url = args[1];
@@ -84,23 +101,72 @@ public class MusicCommands {
             for (int i = 1; i < args.length; i++){
                 yt += args[i] + " ";
             }
-            manager.loadPlay(event.getChannel(), yt);
+            manager.loadPlay(event, event.getChannel(), yt);
             manager.getGMM(event.getGuild()).player.setVolume(10);
             return;
         }
 
 
-        manager.loadPlay(event.getChannel(), url);
+        manager.loadPlay(event, event.getChannel(), url);
         manager.getGMM(event.getGuild()).player.setVolume(10);
     }
 
     public void stop(GuildMessageReceivedEvent event){
         PlayerManager manager = PlayerManager.getINSTANCE();
         GuildMusicManager musicManager = manager.getGMM(event.getGuild());
+        EmbedBuilder embed = new EmbedBuilder();
+        TextChannel channel = event.getChannel();
 
         musicManager.scheduler.getQueue().clear();
         musicManager.player.stopTrack();
         musicManager.player.setPaused(false);
+
+        embed.setTitle("Stopping Music");
+        embed.setColor(0x6F3C89);
+        channel.sendMessage(embed.build()).queue();
+        return;
+    }
+
+    public void pause(GuildMessageReceivedEvent event){
+        PlayerManager manager = PlayerManager.getINSTANCE();
+        GuildMusicManager musicManager = manager.getGMM(event.getGuild());
+        EmbedBuilder embed = new EmbedBuilder();
+        TextChannel channel = event.getChannel();
+
+        if(musicManager.player.isPaused()){
+            embed.setTitle(":no_entry: Already Paused");
+            embed.setColor(0x6F3C89);
+            channel.sendMessage(embed.build()).queue();
+            return;
+        }
+        //musicManager.player.stopTrack();
+        musicManager.player.setPaused(true);
+
+        embed.setTitle(":pause_button: Paused Music");
+        embed.setColor(0x6F3C89);
+        channel.sendMessage(embed.build()).queue();
+        return;
+    }
+
+    public void resume(GuildMessageReceivedEvent event){
+        PlayerManager manager = PlayerManager.getINSTANCE();
+        GuildMusicManager musicManager = manager.getGMM(event.getGuild());
+        EmbedBuilder embed = new EmbedBuilder();
+        TextChannel channel = event.getChannel();
+
+        if(!musicManager.player.isPaused()){
+            embed.setTitle(":no_entry: Not Paused");
+            embed.setColor(0x6F3C89);
+            channel.sendMessage(embed.build()).queue();
+            return;
+        }
+        //musicManager.player;
+        musicManager.player.setPaused(false);
+
+        embed.setTitle(":arrow_forward: Resumed Music");
+        embed.setColor(0x6F3C89);
+        channel.sendMessage(embed.build()).queue();
+        return;
     }
 
     public void queue(GuildMessageReceivedEvent event){
@@ -108,34 +174,38 @@ public class MusicCommands {
         PlayerManager manager = PlayerManager.getINSTANCE();
         GuildMusicManager musicManager = manager.getGMM(event.getGuild());
         BlockingQueue<AudioTrack> queue = musicManager.scheduler.getQueue();
+        EmbedBuilder embed = new EmbedBuilder();
 
         if (queue.isEmpty() && musicManager.player.getPlayingTrack() == null){
-            channel.sendMessage("Queue is empty").queue();
+            embed.setTitle(":no_entry: Queue is Empty");
+            embed.setColor(0x6F3C89);
+            channel.sendMessage(embed.build()).queue();
             return;
         }
 
-        int count = Math.min(queue.size(), 10);
+        int count = Math.min(queue.size(), 5);
         List<AudioTrack> tracks = new ArrayList<>(queue);
         EmbedBuilder queueEmbed = new EmbedBuilder();
         AudioTrack currentSong = musicManager.player.getPlayingTrack();
         AudioTrackInfo currentInfo = currentSong.getInfo();
-
-        queueEmbed.setTitle("Current Queue Size: " + queue.size());
+        queueEmbed.setTitle(":musical_score:  Music Queue");
+        queueEmbed.addField("Current Queue Size:", "" + queue.size(), false);
         queueEmbed.setColor(0x6F3C89);
         queueEmbed.setThumbnail(getThumbnail(currentInfo));
-        queueEmbed.addField("Currently Playing: ", currentInfo.title, false);
-        queueEmbed.addField("Uploader: ", currentInfo.author, false);
-
+        queueEmbed.addField("Currently Playing:", "[" + currentInfo.title + "]" + "(" + currentInfo.uri+ ")", false);
+        queueEmbed.addField("Uploader:", currentInfo.author, false);
+        queueEmbed.addBlankField(true);
 
         String queued = "";
         for (int i = 0; i < count; i++){
             AudioTrack track = tracks.get(i);
             AudioTrackInfo info = track.getInfo();
             queued += "" + (i+1) + ") ";
-            queued += "Song Name: " + info.title + "\n" + "Uploaded By: " + info.author + "\n\n";
+            queued += "Song Name: " + "[" + info.title + "]" + "(" + info.uri+ ")"+ "\n" + "Uploaded By: " + info.author + "\n\n";
         }
-        queueEmbed.addField("Queued Song:", queued, false);
-        queueEmbed.setFooter("Requested by: " + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
+
+        queueEmbed.addField("Queued Songs:", queued, false);
+        queueEmbed.setFooter("Requested by:" + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
         channel.sendMessage(queueEmbed.build()).queue();
     }
 
@@ -145,14 +215,46 @@ public class MusicCommands {
         GuildMusicManager musicManager = manager.getGMM(event.getGuild());
         TrackScheduler scheduler = musicManager.scheduler;
         AudioPlayer player = musicManager.player;
+        EmbedBuilder embed = new EmbedBuilder();
 
         if (player.getPlayingTrack() == null){
-            channel.sendMessage("Nothing is playing").queue();
+            embed.setTitle(":no_entry: Nothing is Playing");
+            embed.setColor(0x6F3C89);
+            channel.sendMessage(embed.build()).queue();
             return;
         }
 
         scheduler.nextTrack();
-        channel.sendMessage("Song skipped").queue();
+        embed.setTitle(":track_next: Song Skipped");
+        embed.setColor(0x6F3C89);
+        channel.sendMessage(embed.build()).queue();
+        return;
+    }
+
+    public void currentSong(GuildMessageReceivedEvent event){
+        TextChannel channel = event.getChannel();
+        PlayerManager manager = PlayerManager.getINSTANCE();
+        GuildMusicManager musicManager = manager.getGMM(event.getGuild());
+        BlockingQueue<AudioTrack> queue = musicManager.scheduler.getQueue();
+        EmbedBuilder embed = new EmbedBuilder();
+
+        if (musicManager.player.isPaused() || musicManager.player.getPlayingTrack() == null){
+            embed.setTitle(":no_entry: Nothing is Playing");
+            embed.setColor(0x6F3C89);
+            channel.sendMessage(embed.build()).queue();
+            return;
+        }
+
+        AudioTrack currentSong = musicManager.player.getPlayingTrack();
+        AudioTrackInfo currentInfo = currentSong.getInfo();
+        embed.setTitle(":musical_score:  Current Song");
+        embed.setColor(0x6F3C89);
+        embed.setImage(getThumbnail(currentInfo));
+        embed.addField("Currently Playing:", "[" + currentInfo.title + "]" + "(" + currentInfo.uri+ ")", false);
+        embed.addField("Uploader:", currentInfo.author, false);
+        embed.setFooter("Requested by:" + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
+
+        channel.sendMessage(embed.build()).queue();
     }
 
     private boolean URLCheck(String url){

@@ -1,17 +1,16 @@
-package Commands;
+package Handlers;
 
 import com.sedmelluq.discord.lavaplayer.player.AudioLoadResultHandler;
 import com.sedmelluq.discord.lavaplayer.player.AudioPlayerManager;
 import com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager;
-import com.sedmelluq.discord.lavaplayer.source.AudioSourceManager;
 import com.sedmelluq.discord.lavaplayer.source.AudioSourceManagers;
 import com.sedmelluq.discord.lavaplayer.tools.FriendlyException;
 import com.sedmelluq.discord.lavaplayer.track.AudioPlaylist;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
+import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.entities.Guild;
 import net.dv8tion.jda.core.entities.TextChannel;
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -49,13 +48,16 @@ public class PlayerManager {
         return  musicManager;
     }
 
-    public void loadPlay(TextChannel channel, String url){
+    public void loadPlay(GuildMessageReceivedEvent event,TextChannel channel, String url){
         GuildMusicManager musicManager = getGMM(channel.getGuild());
+        EmbedBuilder embed = new EmbedBuilder();
           pm.loadItem(url, new AudioLoadResultHandler() {
 
             @Override
             public void trackLoaded(AudioTrack audioTrack) {
-                channel.sendMessage("Added to queue: " + audioTrack.getInfo().title).queue();
+                embed.setTitle(":headphones: Added to queue: " + audioTrack.getInfo().title);
+                embed.setColor(0x6F3C89);
+                channel.sendMessage(embed.build()).queue();
                 play(musicManager, audioTrack);
             }
 
@@ -67,18 +69,25 @@ public class PlayerManager {
                     first = audioPlaylist.getTracks().remove(0);
                 }
                 currentSongName = first.getInfo().title;
-                channel.sendMessage("Added to Queue: " + first.getInfo().title).queue();
+                embed.setTitle(":headphones: Added to queue: " + first.getInfo().title);
+                embed.setColor(0x6F3C89);
+                embed.setFooter("Requested by:" + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
+                channel.sendMessage(embed.build()).queue();
                 play(musicManager, first);
             }
 
             @Override
             public void noMatches() {
-                channel.sendMessage("Nothing found").queue();
+                embed.setTitle(":no_entry: Nothing Found");
+                embed.setColor(0x6F3C89);
+                channel.sendMessage(embed.build()).queue();
             }
 
             @Override
             public void loadFailed(FriendlyException e) {
-                channel.sendMessage("Could not play: " + e.getMessage()).queue();
+                embed.setTitle(":mo_entry: Could not play: " + e.getMessage());
+                embed.setColor(0x6F3C89);
+                channel.sendMessage(embed.build()).queue();
             }
         });
     }

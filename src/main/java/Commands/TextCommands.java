@@ -1,11 +1,11 @@
 package Commands;
 
-import MainFiles.DiscordBot;
 import net.dv8tion.jda.core.EmbedBuilder;
-import net.dv8tion.jda.core.Permission;
 import net.dv8tion.jda.core.entities.Member;
 import net.dv8tion.jda.core.entities.Message;
+import net.dv8tion.jda.core.entities.TextChannel;
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
+import net.dv8tion.jda.core.exceptions.HierarchyException;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -15,51 +15,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Stream;
 
-
-
 public class TextCommands extends ListenerAdapter{
-
-    public void onGuildMessageReceived(GuildMessageReceivedEvent event){
-        String[] args = event.getMessage().getContentRaw().split("\\s+");
-        MusicCommands music = new MusicCommands();
-
-        if (args[0].equalsIgnoreCase(DiscordBot.prefix + "arrive")){
-            arrive(event);
-        }
-        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "snap") && event.getMember().hasPermission(Permission.ADMINISTRATOR)){
-            snapMessages(event);
-        }
-        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "avatar")){
-            getAvatar(event);
-        }
-        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "info")){
-            getUserInfo(event);
-        }
-        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "quote")){
-            randomQuote(event);
-        }
-        else if(args[0].equalsIgnoreCase(DiscordBot.prefix + "f")){
-            payRespects(event);
-        }
-        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "join") || args[0].equalsIgnoreCase(DiscordBot.prefix + "j")){
-            music.join(event);
-        }
-        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "leave") || args[0].equalsIgnoreCase(DiscordBot.prefix + "l")){
-            music.leave(event);
-        }
-        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "play") || args[0].equalsIgnoreCase(DiscordBot.prefix + "p")){
-            music.playSong(event);
-        }
-        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "stop")){
-            music.stop(event);
-        }
-        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "queue") || args[0].equalsIgnoreCase(DiscordBot.prefix + "q")){
-            music.queue(event);
-        }
-        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "skip") || args[0].equalsIgnoreCase(DiscordBot.prefix + "s")){
-            music.skip(event);
-        }
-    }
 
     public void arrive(GuildMessageReceivedEvent event){
         EmbedBuilder arrival = new EmbedBuilder();
@@ -68,6 +24,78 @@ public class TextCommands extends ListenerAdapter{
         arrival.setImage("https://i.imgur.com/SMsNJN6.jpg");
         arrival.setFooter("Created by Thanos", "https://i.imgur.com/SMsNJN6.jpg");
         event.getChannel().sendMessage(arrival.build()).queue();
+    }
+
+    public void ban(GuildMessageReceivedEvent event){
+        String[] args = event.getMessage().getContentRaw().split("\\s+");
+
+        if (args.length <= 2 || event.getMessage().getMentionedMembers().size() == 0){
+            EmbedBuilder error = new EmbedBuilder();
+            error.setColor(0x6F3C89);
+            error.setTitle(":no_entry: Please specify who to ban with @USER, how far back to delete his messages");
+            event.getChannel().sendMessage(error.build()).queue();
+            return;
+        }
+        else {
+            Member banner = event.getMember();
+            Member banned = event.getMessage().getMentionedMembers().get(0);
+            TextChannel channel = event.getChannel();
+
+            if (!banner.canInteract(banned)){
+                EmbedBuilder error = new EmbedBuilder();
+                error.setColor(0x6F3C89);
+                error.setTitle(":no_entry: You don't have sufficient permissions to ban this person.");
+                channel.sendMessage(error.build()).queue();
+                return;
+            }
+            event.getGuild().getController().ban(banned,Integer.parseInt(args[2])).reason("Because.").queue();
+            EmbedBuilder success = new EmbedBuilder();
+            success.setColor(0x6F3C89);
+            success.setTitle(":smiling_imp: Fun isn’t something one considers when balancing the universe. But this… does put a smile on my face.");
+            success.setDescription("User: " + banned.getUser().getName() + " has been banned.");
+            channel.sendMessage(success.build()).queue();
+        }
+    }
+
+    public void kick(GuildMessageReceivedEvent event){
+        String[] args = event.getMessage().getContentRaw().split("\\s+");
+
+        if (args.length <= 1 || event.getMessage().getMentionedMembers().size() == 0){
+            EmbedBuilder error = new EmbedBuilder();
+            error.setColor(0x6F3C89);
+            error.setTitle(":no_entry: Please specify who to kick with @USER.");
+            event.getChannel().sendMessage(error.build()).queue();
+            return;
+        }
+        else {
+            Member kicker = event.getMember();
+            Member kicked = event.getMessage().getMentionedMembers().get(0);
+            TextChannel channel = event.getChannel();
+
+            if (!kicker.canInteract(kicked)){
+                EmbedBuilder error = new EmbedBuilder();
+                error.setColor(0x6F3C89);
+                error.setTitle(":no_entry: You don't have sufficient permissions to kick this person.");
+                channel.sendMessage(error.build()).queue();
+                return;
+            }
+
+            try {
+                event.getGuild().getController().kick(kicked).reason("Because.").queue();
+                EmbedBuilder success = new EmbedBuilder();
+                success.setColor(0x6F3C89);
+                success.setTitle(":smiling_imp: Fun isn’t something one considers when balancing the universe. But this… does put a smile on my face.");
+                success.setDescription("User: " + kicked.getUser().getName() + " has been kicked.");
+                channel.sendMessage(success.build()).queue();
+            }
+            catch (HierarchyException e){
+                EmbedBuilder error = new EmbedBuilder();
+                error.setColor(0x6F3C89);
+                error.setTitle(":no_entry: You can't kick someone with equal permissions.");
+                channel.sendMessage(error.build()).queue();
+                return;
+            }
+        }
     }
 
     public void snapMessages(GuildMessageReceivedEvent event){
@@ -101,6 +129,7 @@ public class TextCommands extends ListenerAdapter{
                 success.setColor(0x6F3C89);
                 success.setTitle("Fun isn't something one considers when balancing the universe. But this... does put a smile on my face.");
                 success.setDescription("Messages deleted successfully");
+                success.setFooter("Snapped by:" + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
                 event.getChannel().sendMessage(success.build()).queue();
             }
             catch (IllegalArgumentException e){
@@ -131,6 +160,7 @@ public class TextCommands extends ListenerAdapter{
             showAvatar.setColor(0x6F3C89);
             showAvatar.setTitle(event.getMessage().getAuthor().getName() + "'s Avatar:");
             showAvatar.setImage(avatarURL);
+            showAvatar.setFooter("Requested by:" + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
             event.getChannel().sendMessage(showAvatar.build()).queue();
         }
         else if (args.length == 2){
@@ -142,8 +172,8 @@ public class TextCommands extends ListenerAdapter{
                 showAvatar.setColor(0x6F3C89);
                 showAvatar.setTitle(member.getEffectiveName() + "'s Avatar:");
                 showAvatar.setImage(avatarURL);
+                showAvatar.setFooter("Requested by:" + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
                 event.getChannel().sendMessage(showAvatar.build()).queue();
-
             }
             catch (IndexOutOfBoundsException e){
                 EmbedBuilder error = new EmbedBuilder();
@@ -180,7 +210,7 @@ public class TextCommands extends ListenerAdapter{
             userInfo.addField("Game: ", user.getGame() == null ? "N/A" : user.getGame().asRichPresence().getName().equalsIgnoreCase("Spotify") ? "N/A" : user.getGame().asRichPresence().getName(), true);
             userInfo.addField("Listening to: ", user.getGame() == null ? "N/A": !user.getGame().asRichPresence().getName().equalsIgnoreCase("spotify") ? "N/A" : user.getGame().asRichPresence().getDetails(), true);
             userInfo.addField("Artist: ", user.getGame() == null ? "N/A": !user.getGame().asRichPresence().getName().equalsIgnoreCase("spotify") ? "N/A" : user.getGame().asRichPresence().getState(), true);
-            userInfo.setFooter("Requested by: " + user.getUser().getName(), event.getAuthor().getAvatarUrl());
+            userInfo.setFooter("Requested by:" + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
             event.getChannel().sendMessage(userInfo.build()).queue();
         }
         else if (args.length == 2){
@@ -199,7 +229,7 @@ public class TextCommands extends ListenerAdapter{
                 userInfo.addField("Game: ", user.getGame() == null ? "N/A" : user.getGame().isRich() ? "N/A"  : user.getGame().toString(), true);
                 userInfo.addField("Listening to: ", user.getGame() == null ? "N/A": !user.getGame().isRich() ? "N/A" : user.getGame().asRichPresence().getDetails(), true);
                 userInfo.addField("Artist: ", user.getGame() == null ? "N/A": !user.getGame().isRich() ? "N/A" : user.getGame().asRichPresence().getState(), true);
-                userInfo.setFooter("Created by: " + event.getAuthor().getName(), event.getAuthor().getAvatarUrl());
+                userInfo.setFooter("Requested by:" + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
                 event.getChannel().sendMessage(userInfo.build()).queue();
 
             }
@@ -249,7 +279,47 @@ public class TextCommands extends ListenerAdapter{
             respect.setColor(0x6F3C89);
             respect.setTitle("You have my respect, " + (user.getNickname() == null ? "N/A" : user.getNickname()) + ". When I'm done, half of humanity will still be alive. I hope they remember you.");
             respect.setImage("https://media.giphy.com/media/26gR1v0rIDrjSsca4/giphy.gif");
+            respect.setFooter("Paid by:" + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
             event.getChannel().sendMessage(respect.build()).queue();
         }
+    }
+
+    public void musicHelp(GuildMessageReceivedEvent event){
+
+        EmbedBuilder embed = new EmbedBuilder();
+        TextChannel channel = event.getChannel();
+
+        embed.setTitle(":orange_book: Music Commands");
+        embed.setColor(0x6F3C89);
+        embed.addField(">join or >j", "The bot will join the voice channel.", false);
+        embed.addField(">leave or >l", "The bot will leave the voice channel, and clear the queue.", false);
+        embed.addField(">play or >p", "Queues a song using a URL or will search on Youtube if no URL found.", false);
+        embed.addField(">stop", "Stops music and clears queue.", false);
+        embed.addField(">skip or >s", "Skips current song.", false);
+        embed.addField(">pause", "Pauses the current song.", false);
+        embed.addField(">resume", "Resumes a paused song.", false);
+        embed.addField(">song", "Displays info about the current song.", false);
+        embed.addField(">queue or >q", "Displays info about the current song, and what songs are in queue.", false);
+        embed.setFooter("Requested by:" + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
+        channel.sendMessage(embed.build()).queue();
+    }
+
+    public void textHelp(GuildMessageReceivedEvent event){
+
+        EmbedBuilder embed = new EmbedBuilder();
+        TextChannel channel = event.getChannel();
+
+        embed.setTitle(":orange_book: Text Commands");
+        embed.setColor(0x6F3C89);
+        embed.addField(">arrive", "Thanos.", false);
+        embed.addField(">snap #", "Deletes the specified number of messages. Admin permissions needed.", false);
+        embed.addField(">ban @USER #Days", "Bans a user and deletes their messages from the past amount of days. Admin permissions Needed", false);
+        embed.addField(">kick @USER", "Kicks a user. Admin permissions Needed", false);
+        embed.addField(">avatar or >avatar @USER", "Retrieves either your avatar, or the mentioned user's avatar.", false);
+        embed.addField(">info or >info @USER", "Retrieves either your info, or the mentioned user's info.", false);
+        embed.addField(">quote", "Gives you a random quote. Prob some weeb shit.", false);
+        embed.addField(">f", "Press to Pay Respects", false);
+        embed.setFooter("Requested by:" + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
+        channel.sendMessage(embed.build()).queue();
     }
 }

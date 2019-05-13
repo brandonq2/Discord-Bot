@@ -19,6 +19,7 @@ public class PlayerManager {
     private static PlayerManager INSTANCE;
     private final AudioPlayerManager pm;
     private final Map<Long, GuildMusicManager> mm;
+    public AudioTrack currentSong;
 
     private PlayerManager(){
         this.mm = new HashMap<>();
@@ -63,7 +64,8 @@ public class PlayerManager {
                 AudioTrack first = audioPlaylist.getSelectedTrack();
 
                 if (first == null){
-                    first = audioPlaylist.getTracks().get(0);
+                    currentSong = audioPlaylist.getTracks().get(0).makeClone();
+                    first = audioPlaylist.getTracks().remove(0);
                 }
                 channel.sendMessage("Playing: " + first.getInfo().title).queue();
                 play(musicManager, first);

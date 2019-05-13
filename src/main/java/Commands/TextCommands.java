@@ -40,14 +40,20 @@ public class TextCommands extends ListenerAdapter{
         else if(args[0].equalsIgnoreCase(DiscordBot.prefix + "f")){
             payRespects(event);
         }
-        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "join")){
+        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "join") || args[0].equalsIgnoreCase(DiscordBot.prefix + "j")){
             music.join(event);
         }
-        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "leave")){
+        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "leave") || args[0].equalsIgnoreCase(DiscordBot.prefix + "l")){
             music.leave(event);
         }
-        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "play")){
+        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "play") || args[0].equalsIgnoreCase(DiscordBot.prefix + "p")){
             music.playSong(event);
+        }
+        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "stop") || args[0].equalsIgnoreCase(DiscordBot.prefix + "s")){
+            music.stop(event);
+        }
+        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "queue") || args[0].equalsIgnoreCase(DiscordBot.prefix + "q")){
+            music.queue(event);
         }
     }
 

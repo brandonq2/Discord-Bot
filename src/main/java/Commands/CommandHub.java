@@ -70,6 +70,12 @@ public class CommandHub extends ListenerAdapter {
         else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "volume") || args[0].equalsIgnoreCase(DiscordBot.prefix + "v")){
             music.checkVolume(event);
         }
+        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "seek")){
+            music.seek(event);
+        }
+        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "rewind")){
+            music.rewind(event);
+        }
         else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "mhelp")){
             text.musicHelp(event);
         }

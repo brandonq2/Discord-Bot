@@ -21,7 +21,7 @@ public class TextCommands extends ListenerAdapter{
         EmbedBuilder arrival = new EmbedBuilder();
         arrival.setColor(0x6F3C89);
         arrival.setTitle("Dread it. Run from it. Destiny arrives all the same. And now, it's here. Or should I say, I am.");
-        arrival.setImage("https://i.imgur.com/SMsNJN6.jpg");
+        arrival.setImage("https://i.redd.it/4t0doipqxy811.gif");
         arrival.setFooter("Created by Thanos", "https://i.imgur.com/SMsNJN6.jpg");
         event.getChannel().sendMessage(arrival.build()).queue();
     }
@@ -53,6 +53,7 @@ public class TextCommands extends ListenerAdapter{
             success.setColor(0x6F3C89);
             success.setTitle(":smiling_imp: Fun isn’t something one considers when balancing the universe. But this… does put a smile on my face.");
             success.setDescription("User: " + banned.getUser().getName() + " has been banned.");
+            success.setImage("https://cdn.vox-cdn.com/uploads/chorus_asset/file/10439411/Infinity_War__1.gif");
             channel.sendMessage(success.build()).queue();
         }
     }
@@ -85,6 +86,7 @@ public class TextCommands extends ListenerAdapter{
                 EmbedBuilder success = new EmbedBuilder();
                 success.setColor(0x6F3C89);
                 success.setTitle(":smiling_imp: Fun isn’t something one considers when balancing the universe. But this… does put a smile on my face.");
+                success.setImage("https://cdn.vox-cdn.com/uploads/chorus_asset/file/10439411/Infinity_War__1.gif");
                 success.setDescription("User: " + kicked.getUser().getName() + " has been kicked.");
                 channel.sendMessage(success.build()).queue();
             }
@@ -129,6 +131,7 @@ public class TextCommands extends ListenerAdapter{
                 success.setColor(0x6F3C89);
                 success.setTitle("Fun isn't something one considers when balancing the universe. But this... does put a smile on my face.");
                 success.setDescription("Messages deleted successfully");
+                success.setImage("https://mtv.mtvnimages.com/uri/mgid:file:http:shared:mtv.com/news/wp-content/uploads/2019/03/Thanos-Snap-1552933559.gif?quality=.8&height=251&width=600");
                 success.setFooter("Snapped by:" + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
                 event.getChannel().sendMessage(success.build()).queue();
             }
@@ -244,8 +247,8 @@ public class TextCommands extends ListenerAdapter{
     }
 
     public void randomQuote(GuildMessageReceivedEvent event){
-        try (Stream<String> lines = Files.lines(Paths.get("C:\\Users\\Brandon\\Desktop\\Discord-Bot\\src\\quotes.txt"))) {
-            Stream<String> lines2 = Files.lines(Paths.get("C:\\Users\\Brandon\\Desktop\\Discord-Bot\\src\\quotes.txt"));
+        try (Stream<String> lines = Files.lines(Paths.get("C:\\Users\\Brandon\\Desktop\\Discord-Bot\\src\\main\\java\\quotes.txt"))) {
+            Stream<String> lines2 = Files.lines(Paths.get("C:\\Users\\Brandon\\Desktop\\Discord-Bot\\src\\main\\java\\quotes.txt"));
             Random rand = new Random();
             int n1 = rand.nextInt(18) + 1;
             int n2 = (2 * n1) - 2;
@@ -301,6 +304,8 @@ public class TextCommands extends ListenerAdapter{
         embed.addField(">queue or >q", "Displays info about the current song, and what songs are in queue.", false);
         embed.addField(">setvolume or >setv", "Sets the volume from 1-100%.", false);
         embed.addField(">volume or >v", "Displays the current volume.", false);
+        embed.addField(">seek", "Skips a specified amount of seconds.", false);
+        embed.addField(">rewind", "Rewinds a specified amount of seconds.", false);
         embed.setFooter("Requested by:" + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
         channel.sendMessage(embed.build()).queue();
     }

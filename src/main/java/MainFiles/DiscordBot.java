@@ -14,8 +14,8 @@ public class DiscordBot{
 
 
     public static void main(String[] args) throws LoginException{
-        jda = new JDABuilder(AccountType.BOT).setToken("NDM4OTQ5Njg5MDU2ODIxMjQ5.XNeiag.ah-fRuP4qWZXy4MuwE6WuS938P8").buildAsync();
-        jda.getPresence().setGame(Game.playing("Finding the Infinity Stones"));
+        jda = new JDABuilder(AccountType.BOT).setToken("NTc3Nzc4OTMxNDY2MzcxMDc0.XNqBLA.UqifrBh7uPd_8JXiuITNLc3lZBg").buildAsync();
+        jda.getPresence().setGame(Game.playing("Farming Simulator 2019"));
         jda.addEventListener(new CommandHub());
     }
 }

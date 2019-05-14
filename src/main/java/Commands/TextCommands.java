@@ -244,7 +244,6 @@ public class TextCommands extends ListenerAdapter{
     }
 
     public void randomQuote(GuildMessageReceivedEvent event){
-        //File file = new File("quotes.txt");
         try (Stream<String> lines = Files.lines(Paths.get("C:\\Users\\Brandon\\Desktop\\Discord-Bot\\src\\quotes.txt"))) {
             Stream<String> lines2 = Files.lines(Paths.get("C:\\Users\\Brandon\\Desktop\\Discord-Bot\\src\\quotes.txt"));
             Random rand = new Random();

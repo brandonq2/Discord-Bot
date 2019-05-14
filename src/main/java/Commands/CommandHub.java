@@ -37,6 +37,7 @@ public class CommandHub extends ListenerAdapter {
             text.payRespects(event);
         }
         else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "join") || args[0].equalsIgnoreCase(DiscordBot.prefix + "j")){
+            music.joinVolume(event);
             music.join(event);
         }
         else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "leave") || args[0].equalsIgnoreCase(DiscordBot.prefix + "l")){
@@ -62,6 +63,9 @@ public class CommandHub extends ListenerAdapter {
         }
         else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "song")){
             music.currentSong(event);
+        }
+        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "volume")){
+            music.userVolume(event);
         }
         else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "mhelp")){
             text.musicHelp(event);

@@ -43,19 +43,19 @@
     <session id="1104371313">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.5" value="2" />
+          <entry key="project.open.time.5" value="3" />
           <entry key="project.open.time.6" value="3" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="class" value="2" />
           <entry key="dummy" value="17" />
-          <entry key="java" value="12133" />
+          <entry key="java" value="13326" />
           <entry key="txt" value="260" />
           <entry key="xml" value="53" />
         </counts>
@@ -63,7 +63,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="2" />
-          <entry key="JAVA" value="12133" />
+          <entry key="JAVA" value="13326" />
           <entry key="PLAIN_TEXT" value="277" />
           <entry key="XML" value="53" />
         </counts>
@@ -73,7 +73,7 @@
           <entry key="class" value="8" />
           <entry key="gitattributes" value="1" />
           <entry key="iml" value="3" />
-          <entry key="java" value="64" />
+          <entry key="java" value="74" />
           <entry key="txt" value="1" />
           <entry key="xml" value="16" />
         </counts>
@@ -82,7 +82,7 @@
         <counts>
           <entry key="CLASS" value="8" />
           <entry key="IDEA_MODULE" value="3" />
-          <entry key="JAVA" value="64" />
+          <entry key="JAVA" value="74" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="XML" value="16" />
         </counts>
@@ -94,38 +94,31 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="25" column="21" lean-forward="true" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+            <state relative-caret-position="239">
+              <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Commands/MusicCommands.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/MainFiles/DiscordBot.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Handlers/AudioSendHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
+            <state relative-caret-position="270">
+              <caret line="322" column="28" selection-start-line="322" selection-start-column="28" selection-end-line="322" selection-end-column="28" />
               <folding>
-                <element signature="e#2405#2406#0" expanded="true" />
-                <element signature="e#2433#2434#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="method#join#0;class#MusicCommands#0" />
+                <element signature="method#leave#0;class#MusicCommands#0" />
+                <element signature="method#playSong#0;class#MusicCommands#0" />
+                <element signature="method#stop#0;class#MusicCommands#0" />
+                <element signature="method#pause#0;class#MusicCommands#0" />
+                <element signature="method#resume#0;class#MusicCommands#0" />
+                <element signature="method#queue#0;class#MusicCommands#0" />
+                <element signature="method#skip#0;class#MusicCommands#0" />
+                <element signature="method#currentSong#0;class#MusicCommands#0" />
+                <element signature="method#URLCheck#0;class#MusicCommands#0" />
+                <element signature="method#getThumbnail#0;class#MusicCommands#0" />
+                <element signature="method#formatTime#0;class#MusicCommands#0" />
               </folding>
             </state>
           </provider>
@@ -134,31 +127,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Commands/CommandHub.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="17" column="131" selection-start-line="17" selection-start-column="131" selection-end-line="17" selection-end-column="131" />
+            <state relative-caret-position="719">
+              <caret line="67" column="29" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Commands/TextCommands.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="316" column="35" selection-start-line="316" selection-start-column="35" selection-end-line="316" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#arrive#0;class#TextCommands#0" />
-                <element signature="method#ban#0;class#TextCommands#0" />
-                <element signature="method#kick#0;class#TextCommands#0" />
-                <element signature="method#snapMessages#0;class#TextCommands#0" />
-                <element signature="method#getAvatar#0;class#TextCommands#0" />
-                <element signature="method#getUserInfo#0;class#TextCommands#0" />
-                <element signature="method#randomQuote#0;class#TextCommands#0" />
-                <element signature="method#payRespects#0;class#TextCommands#0" />
-                <element signature="method#musicHelp#0;class#TextCommands#0" />
               </folding>
             </state>
           </provider>
@@ -205,14 +177,14 @@
         <option value="$PROJECT_DIR$/.idea/libraries/Maven__com_sedmelluq_lavaplayer_natives_1_3_13.xml" />
         <option value="$PROJECT_DIR$/src/main/java/Commands/TrackScheduler.java" />
         <option value="$PROJECT_DIR$/src/main/java/Commands/PlayerManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Handlers/GuildMusicManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Commands/MusicCommands.java" />
         <option value="$PROJECT_DIR$/src/main/java/Handlers/PlayerManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Handlers/TrackScheduler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Commands/CommandHub.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Commands/TextCommands.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/MainFiles/DiscordBot.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Commands/TextCommands.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Handlers/TrackScheduler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Handlers/GuildMusicManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Commands/CommandHub.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Commands/MusicCommands.java" />
       </list>
     </option>
   </component>
@@ -221,6 +193,22 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Discord Bot" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Discord Bot" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-470" />
@@ -233,8 +221,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -266,12 +252,22 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="MainFiles" type="462c0819:PsiDirectoryNode" />
+              <item name="Commands" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Discord-Bot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Discord-Bot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Handlers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -280,7 +276,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557751673775" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557812996792" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../libconnector.so" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -332,17 +328,19 @@
       <workItem from="1557701399579" duration="4777000" />
       <workItem from="1557706227608" duration="4778000" />
       <workItem from="1557714152540" duration="15208000" />
-      <workItem from="1557739638751" duration="11212000" />
+      <workItem from="1557739638751" duration="11975000" />
+      <workItem from="1557803109498" duration="5856000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52359000" />
+    <option name="totallyTimeSpent" value="58978000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14589989" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14749734" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -351,7 +349,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.31567568" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31567568" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -371,7 +369,7 @@
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Cargo" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info anchor="right" id="Maven Projects" order="9" />
+      <window_info anchor="right" id="Maven Projects" order="9" weight="0.32960597" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,17 +490,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-793">
           <caret line="256" column="24" selection-start-line="256" selection-start-column="24" selection-end-line="256" selection-end-column="24" />
-          <folding>
-            <element signature="e#8596#8597#0" expanded="true" />
-            <element signature="e#8658#8659#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/sedmelluq/lavaplayer/1.3.10/lavaplayer-1.3.10-sources.jar!/com/sedmelluq/discord/lavaplayer/player/DefaultAudioPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="301" column="14" selection-start-line="301" selection-start-column="14" selection-end-line="301" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -516,51 +503,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Handlers/GuildMusicManager.java">
+    <entry file="jar://D:/Desktop/JDA-3.8.3_463-withDependencies.jar!/net/dv8tion/jda/core/entities/impl/MemberImpl.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="263">
+          <caret line="150" column="19" selection-start-line="150" selection-start-column="19" selection-end-line="150" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Discord Bot.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/MainFiles/DiscordBot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Handlers/PlayerManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="75" selection-start-line="12" selection-start-column="75" selection-end-line="12" selection-end-column="75" />
-          <folding>
-            <element signature="method#PlayerManager#0;class#PlayerManager#0" />
-            <element signature="method#getINSTANCE#0;class#PlayerManager#0" />
-            <element signature="method#getGMM#0;class#PlayerManager#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Handlers/TrackScheduler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="66" selection-start-line="5" selection-start-column="66" selection-end-line="5" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Commands/MusicCommands.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="50" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
-          <folding>
-            <element signature="method#join#0;class#MusicCommands#0" />
-            <element signature="method#leave#0;class#MusicCommands#0" />
-            <element signature="method#playSong#0;class#MusicCommands#0" />
-            <element signature="method#stop#0;class#MusicCommands#0" />
-            <element signature="method#pause#0;class#MusicCommands#0" />
-            <element signature="method#resume#0;class#MusicCommands#0" />
-            <element signature="method#queue#0;class#MusicCommands#0" />
-            <element signature="method#skip#0;class#MusicCommands#0" />
-            <element signature="method#currentSong#0;class#MusicCommands#0" />
-            <element signature="method#URLCheck#0;class#MusicCommands#0" />
-            <element signature="method#getThumbnail#0;class#MusicCommands#0" />
           </folding>
         </state>
       </provider>
@@ -575,52 +540,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Desktop/JDA-3.8.3_463-withDependencies.jar!/net/dv8tion/jda/core/entities/impl/MemberImpl.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Handlers/TrackScheduler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="150" column="19" selection-start-line="150" selection-start-column="19" selection-end-line="150" selection-end-column="19" />
-          <folding>
-            <element signature="e#4945#4946#0" expanded="true" />
-            <element signature="e#5008#5009#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Commands/CommandHub.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="17" column="131" selection-start-line="17" selection-start-column="131" selection-end-line="17" selection-end-column="131" />
+        <state relative-caret-position="207">
+          <caret line="15" column="35" lean-forward="true" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Commands/TextCommands.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="316" column="35" selection-start-line="316" selection-start-column="35" selection-end-line="316" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#arrive#0;class#TextCommands#0" />
-            <element signature="method#ban#0;class#TextCommands#0" />
-            <element signature="method#kick#0;class#TextCommands#0" />
-            <element signature="method#snapMessages#0;class#TextCommands#0" />
-            <element signature="method#getAvatar#0;class#TextCommands#0" />
-            <element signature="method#getUserInfo#0;class#TextCommands#0" />
-            <element signature="method#randomQuote#0;class#TextCommands#0" />
-            <element signature="method#payRespects#0;class#TextCommands#0" />
-            <element signature="method#musicHelp#0;class#TextCommands#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Discord Bot.iml">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Handlers/AudioSendHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
+        <state relative-caret-position="409">
           <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
           <folding>
             <element signature="e#2405#2406#0" expanded="true" />
@@ -629,24 +561,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MainFiles/DiscordBot.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Handlers/GuildMusicManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+        <state relative-caret-position="307">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Handlers/PlayerManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="26" column="52" lean-forward="true" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getINSTANCE#0;class#PlayerManager#0" />
+            <element signature="method#getGMM#0;class#PlayerManager#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Commands/TextCommands.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="116" column="13" lean-forward="true" selection-start-line="116" selection-start-column="13" selection-end-line="121" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#arrive#0;class#TextCommands#0" />
+            <element signature="method#ban#0;class#TextCommands#0" />
+            <element signature="method#kick#0;class#TextCommands#0" />
+            <element signature="method#getAvatar#0;class#TextCommands#0" />
+            <element signature="method#getUserInfo#0;class#TextCommands#0" />
+            <element signature="method#randomQuote#0;class#TextCommands#0" />
+            <element signature="method#payRespects#0;class#TextCommands#0" />
+            <element signature="method#musicHelp#0;class#TextCommands#0" />
+            <element signature="method#textHelp#0;class#TextCommands#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/sedmelluq/lavaplayer/1.3.10/lavaplayer-1.3.10-sources.jar!/com/sedmelluq/discord/lavaplayer/player/DefaultAudioPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="275" column="14" selection-start-line="275" selection-start-column="14" selection-end-line="275" selection-end-column="14" />
+          <folding>
+            <element signature="e#8382#8383#0" expanded="true" />
+            <element signature="e#8452#8453#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="25" column="21" lean-forward="true" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+        <state relative-caret-position="239">
+          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Commands/CommandHub.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+        <state relative-caret-position="719">
+          <caret line="67" column="29" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Commands/MusicCommands.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="322" column="28" selection-start-line="322" selection-start-column="28" selection-end-line="322" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#join#0;class#MusicCommands#0" />
+            <element signature="method#leave#0;class#MusicCommands#0" />
+            <element signature="method#playSong#0;class#MusicCommands#0" />
+            <element signature="method#stop#0;class#MusicCommands#0" />
+            <element signature="method#pause#0;class#MusicCommands#0" />
+            <element signature="method#resume#0;class#MusicCommands#0" />
+            <element signature="method#queue#0;class#MusicCommands#0" />
+            <element signature="method#skip#0;class#MusicCommands#0" />
+            <element signature="method#currentSong#0;class#MusicCommands#0" />
+            <element signature="method#URLCheck#0;class#MusicCommands#0" />
+            <element signature="method#getThumbnail#0;class#MusicCommands#0" />
+            <element signature="method#formatTime#0;class#MusicCommands#0" />
+          </folding>
         </state>
       </provider>
     </entry>

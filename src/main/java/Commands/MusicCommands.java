@@ -18,6 +18,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.TimeUnit;
 
 public class MusicCommands {
 
@@ -76,6 +77,7 @@ public class MusicCommands {
             channel.sendMessage(embed.build()).queue();
             return;
         }
+
         stop(event);
         audioManager.closeAudioConnection();
         embed.setTitle(":v: Cya Nerds");
@@ -88,6 +90,22 @@ public class MusicCommands {
         String[] args = event.getMessage().getContentRaw().split("\\s+");
         PlayerManager manager = PlayerManager.getINSTANCE();
         EmbedBuilder embed = new EmbedBuilder();
+        AudioManager audioManager = event.getGuild().getAudioManager();
+
+        if (!audioManager.isConnected()){
+            embed.setTitle(":no_entry: Bot is not connected to a voice channel");
+            embed.setColor(0x6F3C89);
+            channel.sendMessage(embed.build()).queue();
+            return;
+        }
+
+        VoiceChannel vc = audioManager.getConnectedChannel();
+        if (!vc.getMembers().contains(event.getMember())){
+            embed.setTitle(":no_entry: Must be in the same voice channel");
+            embed.setColor(0x6F3C89);
+            channel.sendMessage(embed.build()).queue();
+            return;
+        }
 
         if (args.length == 1){
             embed.setTitle(":no_entry: No Song Requested");
@@ -102,13 +120,13 @@ public class MusicCommands {
                 yt += args[i] + " ";
             }
             manager.loadPlay(event, event.getChannel(), yt);
-            manager.getGMM(event.getGuild()).player.setVolume(10);
+            //manager.getGMM(event.getGuild()).player.setVolume(10);
             return;
         }
 
 
         manager.loadPlay(event, event.getChannel(), url);
-        manager.getGMM(event.getGuild()).player.setVolume(10);
+        //manager.getGMM(event.getGuild()).player.setVolume(10);
     }
 
     public void stop(GuildMessageReceivedEvent event){
@@ -116,6 +134,15 @@ public class MusicCommands {
         GuildMusicManager musicManager = manager.getGMM(event.getGuild());
         EmbedBuilder embed = new EmbedBuilder();
         TextChannel channel = event.getChannel();
+        AudioManager audioManager = event.getGuild().getAudioManager();
+
+        VoiceChannel vc = audioManager.getConnectedChannel();
+        if (!vc.getMembers().contains(event.getMember())){
+            embed.setTitle(":no_entry: Must be in the same voice channel");
+            embed.setColor(0x6F3C89);
+            channel.sendMessage(embed.build()).queue();
+            return;
+        }
 
         musicManager.scheduler.getQueue().clear();
         musicManager.player.stopTrack();
@@ -132,6 +159,15 @@ public class MusicCommands {
         GuildMusicManager musicManager = manager.getGMM(event.getGuild());
         EmbedBuilder embed = new EmbedBuilder();
         TextChannel channel = event.getChannel();
+        AudioManager audioManager = event.getGuild().getAudioManager();
+
+        VoiceChannel vc = audioManager.getConnectedChannel();
+        if (!vc.getMembers().contains(event.getMember())){
+            embed.setTitle(":no_entry: Must be in the same voice channel");
+            embed.setColor(0x6F3C89);
+            channel.sendMessage(embed.build()).queue();
+            return;
+        }
 
         if(musicManager.player.isPaused()){
             embed.setTitle(":no_entry: Already Paused");
@@ -153,6 +189,15 @@ public class MusicCommands {
         GuildMusicManager musicManager = manager.getGMM(event.getGuild());
         EmbedBuilder embed = new EmbedBuilder();
         TextChannel channel = event.getChannel();
+        AudioManager audioManager = event.getGuild().getAudioManager();
+
+        VoiceChannel vc = audioManager.getConnectedChannel();
+        if (!vc.getMembers().contains(event.getMember())){
+            embed.setTitle(":no_entry: Must be in the same voice channel");
+            embed.setColor(0x6F3C89);
+            channel.sendMessage(embed.build()).queue();
+            return;
+        }
 
         if(!musicManager.player.isPaused()){
             embed.setTitle(":no_entry: Not Paused");
@@ -188,12 +233,15 @@ public class MusicCommands {
         EmbedBuilder queueEmbed = new EmbedBuilder();
         AudioTrack currentSong = musicManager.player.getPlayingTrack();
         AudioTrackInfo currentInfo = currentSong.getInfo();
+        AudioPlayer player = musicManager.player;
+
         queueEmbed.setTitle(":musical_score:  Music Queue");
-        queueEmbed.addField("Current Queue Size:", "" + queue.size(), false);
+        queueEmbed.addField("Songs in Queue:", "" + queue.size(), false);
         queueEmbed.setColor(0x6F3C89);
         queueEmbed.setThumbnail(getThumbnail(currentInfo));
         queueEmbed.addField("Currently Playing:", "[" + currentInfo.title + "]" + "(" + currentInfo.uri+ ")", false);
         queueEmbed.addField("Uploader:", currentInfo.author, false);
+        queueEmbed.addField("Time:", ":clock1: " + String.format("%s - %s", formatTime(player.getPlayingTrack().getPosition()), formatTime(player.getPlayingTrack().getDuration())), false);
         queueEmbed.addBlankField(true);
 
         String queued = "";
@@ -201,7 +249,7 @@ public class MusicCommands {
             AudioTrack track = tracks.get(i);
             AudioTrackInfo info = track.getInfo();
             queued += "" + (i+1) + ") ";
-            queued += "Song Name: " + "[" + info.title + "]" + "(" + info.uri+ ")"+ "\n" + "Uploaded By: " + info.author + "\n\n";
+            queued += "Song Name: " + "[" + info.title + "]" + "(" + info.uri+ ")"+ "\n" + "Uploaded By: " + info.author + "\n" + "Duration: " + formatTime(track.getDuration()) + "\n\n";
         }
 
         queueEmbed.addField("Queued Songs:", queued, false);
@@ -216,7 +264,15 @@ public class MusicCommands {
         TrackScheduler scheduler = musicManager.scheduler;
         AudioPlayer player = musicManager.player;
         EmbedBuilder embed = new EmbedBuilder();
+        AudioManager audioManager = event.getGuild().getAudioManager();
 
+        VoiceChannel vc = audioManager.getConnectedChannel();
+        if (!vc.getMembers().contains(event.getMember())){
+            embed.setTitle(":no_entry: Must be in the same voice channel");
+            embed.setColor(0x6F3C89);
+            channel.sendMessage(embed.build()).queue();
+            return;
+        }
         if (player.getPlayingTrack() == null){
             embed.setTitle(":no_entry: Nothing is Playing");
             embed.setColor(0x6F3C89);
@@ -237,6 +293,7 @@ public class MusicCommands {
         GuildMusicManager musicManager = manager.getGMM(event.getGuild());
         BlockingQueue<AudioTrack> queue = musicManager.scheduler.getQueue();
         EmbedBuilder embed = new EmbedBuilder();
+        AudioPlayer player = musicManager.player;
 
         if (musicManager.player.isPaused() || musicManager.player.getPlayingTrack() == null){
             embed.setTitle(":no_entry: Nothing is Playing");
@@ -252,9 +309,52 @@ public class MusicCommands {
         embed.setImage(getThumbnail(currentInfo));
         embed.addField("Currently Playing:", "[" + currentInfo.title + "]" + "(" + currentInfo.uri+ ")", false);
         embed.addField("Uploader:", currentInfo.author, false);
+        embed.addField("Duration:", ":clock1: " + String.format("%s - %s", formatTime(player.getPlayingTrack().getPosition()), formatTime(player.getPlayingTrack().getDuration())), false);
         embed.setFooter("Requested by:" + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
 
         channel.sendMessage(embed.build()).queue();
+    }
+
+    public void joinVolume(GuildMessageReceivedEvent event){
+        PlayerManager manager = PlayerManager.getINSTANCE();
+        GuildMusicManager musicManager = manager.getGMM(event.getGuild());
+        AudioPlayer player = musicManager.player;
+
+        player.setVolume(10);
+    }
+
+    public void userVolume(GuildMessageReceivedEvent event){
+        String[] args = event.getMessage().getContentRaw().split("\\s+");
+        PlayerManager manager = PlayerManager.getINSTANCE();
+        GuildMusicManager musicManager = manager.getGMM(event.getGuild());
+        AudioPlayer player = musicManager.player;
+        EmbedBuilder embed = new EmbedBuilder();
+        TextChannel channel = event.getChannel();
+
+        if(args.length == 1){
+            EmbedBuilder error = new EmbedBuilder();
+            error.setColor(0x6F3C89);
+            error.setTitle("Invalid Argument");
+            error.setDescription("Please enter a volume percentage from 0-100");
+            event.getChannel().sendMessage(error.build()).queue();
+            return;
+        }
+        if(!args[1].matches("-?(0|[1-9]\\d*)") || Integer.parseInt(args[1]) < 0 || Integer.parseInt(args[1]) > 100){
+            EmbedBuilder error = new EmbedBuilder();
+            error.setColor(0x6F3C89);
+            error.setTitle("Invalid Argument");
+            error.setDescription("Please enter a volume percentage from 0-100");
+            event.getChannel().sendMessage(error.build()).queue();
+            return;
+        }
+
+
+        player.setVolume(Integer.parseInt(args[1]));
+        embed.setTitle(":sound: Volume has been set to: " + args[1] + "%" );
+        embed.setColor(0x6F3C89);
+        channel.sendMessage(embed.build()).queue();
+        return;
+
     }
 
     private boolean URLCheck(String url){
@@ -279,4 +379,14 @@ public class MusicCommands {
         return null;
     }
 
+    private String formatTime(long time){
+        final long hours = time / TimeUnit.HOURS.toMillis(1);
+        final long minutes = time / TimeUnit.MINUTES.toMillis(1);
+        final long seconds = time % TimeUnit.MINUTES.toMillis(1) / TimeUnit.SECONDS.toMillis(1);
+
+        if (hours == 0){
+            return String.format("%02d:%02d", minutes, seconds);
+        }
+        return String.format("%02d:%02d:%02d", hours, minutes, seconds);
+    }
 }

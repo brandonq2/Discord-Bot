@@ -323,6 +323,27 @@ public class MusicCommands {
         player.setVolume(10);
     }
 
+    public void checkVolume(GuildMessageReceivedEvent event){
+        PlayerManager manager = PlayerManager.getINSTANCE();
+        GuildMusicManager musicManager = manager.getGMM(event.getGuild());
+        AudioPlayer player = musicManager.player;
+
+        TextChannel channel = event.getChannel();
+        AudioManager audioManager = event.getGuild().getAudioManager();
+        EmbedBuilder embed = new EmbedBuilder();
+        VoiceChannel vc = audioManager.getConnectedChannel();
+        if (!vc.getMembers().contains(event.getMember())){
+            embed.setTitle(":no_entry: Must be in the same voice channel");
+            embed.setColor(0x6F3C89);
+            channel.sendMessage(embed.build()).queue();
+            return;
+        }
+
+        embed.setColor(0x6F3C89);
+        embed.setTitle(":sound: Volume: " + player.getVolume() + "%");
+        event.getChannel().sendMessage(embed.build()).queue();
+    }
+
     public void userVolume(GuildMessageReceivedEvent event){
         String[] args = event.getMessage().getContentRaw().split("\\s+");
         PlayerManager manager = PlayerManager.getINSTANCE();
@@ -331,10 +352,19 @@ public class MusicCommands {
         EmbedBuilder embed = new EmbedBuilder();
         TextChannel channel = event.getChannel();
 
+        AudioManager audioManager = event.getGuild().getAudioManager();
+        VoiceChannel vc = audioManager.getConnectedChannel();
+        if (!vc.getMembers().contains(event.getMember())){
+            embed.setTitle(":no_entry: Must be in the same voice channel");
+            embed.setColor(0x6F3C89);
+            channel.sendMessage(embed.build()).queue();
+            return;
+        }
+
         if(args.length == 1){
             EmbedBuilder error = new EmbedBuilder();
             error.setColor(0x6F3C89);
-            error.setTitle("Invalid Argument");
+            error.setTitle("Missing Argument");
             error.setDescription("Please enter a volume percentage from 0-100");
             event.getChannel().sendMessage(error.build()).queue();
             return;

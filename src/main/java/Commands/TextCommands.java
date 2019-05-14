@@ -299,6 +299,8 @@ public class TextCommands extends ListenerAdapter{
         embed.addField(">resume", "Resumes a paused song.", false);
         embed.addField(">song", "Displays info about the current song.", false);
         embed.addField(">queue or >q", "Displays info about the current song, and what songs are in queue.", false);
+        embed.addField(">setvolume or >setv", "Sets the volume from 1-100%.", false);
+        embed.addField(">volume or >v", "Displays the current volume.", false);
         embed.setFooter("Requested by:" + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
         channel.sendMessage(embed.build()).queue();
     }

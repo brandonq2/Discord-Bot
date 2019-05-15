@@ -11,6 +11,7 @@ public class CommandHub extends ListenerAdapter {
         String[] args = event.getMessage().getContentRaw().split("\\s+");
         TextCommands text = new TextCommands();
         MusicCommands music = new MusicCommands();
+        RedditCommands reddit = new RedditCommands();
 
         if (args[0].equalsIgnoreCase(DiscordBot.prefix + "arrive")){
             text.arrive(event);
@@ -81,6 +82,9 @@ public class CommandHub extends ListenerAdapter {
         }
         else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "help")){
             text.textHelp(event);
+        }
+        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "reddit") || args[0].equalsIgnoreCase(DiscordBot.prefix + "r")){
+            reddit.randomPostTitle(event);
         }
     }
 

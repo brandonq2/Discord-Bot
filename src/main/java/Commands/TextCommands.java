@@ -132,7 +132,8 @@ public class TextCommands extends ListenerAdapter{
                 success.setTitle("Fun isn't something one considers when balancing the universe. But this... does put a smile on my face.");
                 success.setDescription("Messages deleted successfully");
                 success.setImage("https://mtv.mtvnimages.com/uri/mgid:file:http:shared:mtv.com/news/wp-content/uploads/2019/03/Thanos-Snap-1552933559.gif?quality=.8&height=251&width=600");
-                success.setFooter("Snapped by:" + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
+                Member user = event.getMember();
+                success.setFooter("Paid by: " + (user.getNickname() == null ? user.getEffectiveName() : user.getNickname()), event.getAuthor().getAvatarUrl());
                 event.getChannel().sendMessage(success.build()).queue();
             }
             catch (IllegalArgumentException e){
@@ -175,7 +176,9 @@ public class TextCommands extends ListenerAdapter{
                 showAvatar.setColor(0x6F3C89);
                 showAvatar.setTitle(member.getEffectiveName() + "'s Avatar:");
                 showAvatar.setImage(avatarURL);
-                showAvatar.setFooter("Requested by:" + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
+                showAvatar.setFooter("Requested by: " + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
+                Member user = event.getMember();
+                success.setFooter("Paid by: " + (user.getNickname() == null ? user.getEffectiveName() : user.getNickname()), event.getAuthor().getAvatarUrl());
                 event.getChannel().sendMessage(showAvatar.build()).queue();
             }
             catch (IndexOutOfBoundsException e){
@@ -213,7 +216,7 @@ public class TextCommands extends ListenerAdapter{
             userInfo.addField("Game: ", user.getGame() == null ? "N/A" : user.getGame().asRichPresence().getName().equalsIgnoreCase("Spotify") ? "N/A" : user.getGame().asRichPresence().getName(), true);
             userInfo.addField("Listening to: ", user.getGame() == null ? "N/A": !user.getGame().asRichPresence().getName().equalsIgnoreCase("spotify") ? "N/A" : user.getGame().asRichPresence().getDetails(), true);
             userInfo.addField("Artist: ", user.getGame() == null ? "N/A": !user.getGame().asRichPresence().getName().equalsIgnoreCase("spotify") ? "N/A" : user.getGame().asRichPresence().getState(), true);
-            userInfo.setFooter("Requested by:" + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
+            userInfo.setFooter("Requested by: " + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
             event.getChannel().sendMessage(userInfo.build()).queue();
         }
         else if (args.length == 2){
@@ -279,9 +282,9 @@ public class TextCommands extends ListenerAdapter{
             Member user = event.getMember();
             EmbedBuilder respect = new EmbedBuilder();
             respect.setColor(0x6F3C89);
-            respect.setTitle("You have my respect, " + (user.getNickname() == null ? "N/A" : user.getNickname()) + ". When I'm done, half of humanity will still be alive. I hope they remember you.");
+            respect.setTitle("You have my respect, " + (user.getNickname() == null ? user.getEffectiveName() : user.getNickname()) + ". When I'm done, half of humanity will still be alive. I hope they remember you.");
             respect.setImage("https://media.giphy.com/media/26gR1v0rIDrjSsca4/giphy.gif");
-            respect.setFooter("Paid by:" + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
+            respect.setFooter("Paid by: " + (user.getNickname() == null ? user.getEffectiveName() : user.getNickname()), event.getAuthor().getAvatarUrl());
             event.getChannel().sendMessage(respect.build()).queue();
         }
     }
@@ -306,7 +309,7 @@ public class TextCommands extends ListenerAdapter{
         embed.addField(">volume or >v", "Displays the current volume.", false);
         embed.addField(">seek", "Skips a specified amount of seconds.", false);
         embed.addField(">rewind", "Rewinds a specified amount of seconds.", false);
-        embed.setFooter("Requested by:" + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
+        embed.setFooter("Requested by: " + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
         channel.sendMessage(embed.build()).queue();
     }
 
@@ -325,7 +328,7 @@ public class TextCommands extends ListenerAdapter{
         embed.addField(">info or >info @USER", "Retrieves either your info, or the mentioned user's info.", false);
         embed.addField(">quote", "Gives you a random quote. Prob some weeb shit.", false);
         embed.addField(">f", "Press to Pay Respects", false);
-        embed.setFooter("Requested by:" + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
+        embed.setFooter("Requested by: " + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
         channel.sendMessage(embed.build()).queue();
     }
 }

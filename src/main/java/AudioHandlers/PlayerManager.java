@@ -1,4 +1,4 @@
-package Handlers;
+package AudioHandlers;
 
 import com.sedmelluq.discord.lavaplayer.player.AudioLoadResultHandler;
 import com.sedmelluq.discord.lavaplayer.player.AudioPlayerManager;
@@ -9,6 +9,7 @@ import com.sedmelluq.discord.lavaplayer.track.AudioPlaylist;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
 import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.entities.Guild;
+import net.dv8tion.jda.core.entities.Member;
 import net.dv8tion.jda.core.entities.TextChannel;
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
 import java.util.HashMap;
@@ -57,6 +58,8 @@ public class PlayerManager {
             public void trackLoaded(AudioTrack audioTrack) {
                 embed.setTitle(":headphones: Added to queue: " + audioTrack.getInfo().title);
                 embed.setColor(0x6F3C89);
+                Member user = event.getMember();
+                embed.setFooter("Requested by: " + (user.getNickname() == null ? user.getEffectiveName() : user.getNickname()), event.getAuthor().getAvatarUrl());
                 channel.sendMessage(embed.build()).queue();
                 play(musicManager, audioTrack);
             }
@@ -71,8 +74,8 @@ public class PlayerManager {
                 currentSongName = first.getInfo().title;
                 embed.setTitle(":headphones: Added to queue: " + first.getInfo().title);
                 embed.setColor(0x6F3C89);
-                embed.setFooter("Requested by:" + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
-                channel.sendMessage(embed.build()).queue();
+                Member user = event.getMember();
+                embed.setFooter("Requested by: " + (user.getNickname() == null ? user.getEffectiveName() : user.getNickname()), event.getAuthor().getAvatarUrl());                channel.sendMessage(embed.build()).queue();
                 play(musicManager, first);
             }
 

@@ -1,8 +1,8 @@
 package Commands;
 
-import Handlers.GuildMusicManager;
-import Handlers.PlayerManager;
-import Handlers.TrackScheduler;
+import AudioHandlers.GuildMusicManager;
+import AudioHandlers.PlayerManager;
+import AudioHandlers.TrackScheduler;
 import com.sedmelluq.discord.lavaplayer.player.AudioPlayer;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrackInfo;
@@ -246,7 +246,8 @@ public class MusicCommands {
         }
 
         queueEmbed.addField("Queued Songs:", queued, false);
-        queueEmbed.setFooter("Requested by:" + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
+        Member user = event.getMember();
+        embed.setFooter("Requested by: " + (user.getNickname() == null ? user.getEffectiveName() : user.getNickname()), event.getAuthor().getAvatarUrl());
         channel.sendMessage(queueEmbed.build()).queue();
     }
 
@@ -299,8 +300,8 @@ public class MusicCommands {
         embed.addField("Currently Playing:", "[" + currentInfo.title + "]" + "(" + currentInfo.uri+ ")", false);
         embed.addField("Uploader:", currentInfo.author, false);
         embed.addField("Duration:", ":clock1: " + String.format("%s / %s", formatTime(player.getPlayingTrack().getPosition()), formatTime(player.getPlayingTrack().getDuration())), false);
-        embed.setFooter("Requested by:" + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
-
+        Member user = event.getMember();
+        embed.setFooter("Requested by: " + (user.getNickname() == null ? user.getEffectiveName() : user.getNickname()), event.getAuthor().getAvatarUrl());
         channel.sendMessage(embed.build()).queue();
     }
 

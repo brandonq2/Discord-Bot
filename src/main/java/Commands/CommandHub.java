@@ -5,13 +5,15 @@ import net.dv8tion.jda.core.Permission;
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 
-
 public class CommandHub extends ListenerAdapter {
     public void onGuildMessageReceived(GuildMessageReceivedEvent event){
         String[] args = event.getMessage().getContentRaw().split("\\s+");
         TextCommands text = new TextCommands();
         MusicCommands music = new MusicCommands();
         RedditCommands reddit = new RedditCommands();
+        UrbanDictionaryCommands urban = new UrbanDictionaryCommands();
+        LeagueCommands league = new LeagueCommands();
+        AnimeCommands anime = new AnimeCommands();
 
         if (args[0].equalsIgnoreCase(DiscordBot.prefix + "arrive")){
             text.arrive(event);
@@ -86,6 +88,14 @@ public class CommandHub extends ListenerAdapter {
         else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "reddit") || args[0].equalsIgnoreCase(DiscordBot.prefix + "r")){
             reddit.randomPostTitle(event);
         }
+        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "urban")){
+            urban.urbanDefine(event);
+        }
+        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "league")){
+            league.leagueInfo(event);
+        }
+        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "anime")){
+            anime.getAnime(event);
+        }
     }
-
 }

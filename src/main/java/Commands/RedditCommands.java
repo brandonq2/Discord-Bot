@@ -1,6 +1,7 @@
 package Commands;
 
 import ga.dryco.redditjerk.api.Reddit;
+import ga.dryco.redditjerk.exceptions.OAuthClientException;
 import ga.dryco.redditjerk.exceptions.RedditJerkException;
 import ga.dryco.redditjerk.implementation.RedditApi;
 import ga.dryco.redditjerk.wrappers.*;
@@ -8,7 +9,6 @@ import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.entities.TextChannel;
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
-import java.util.Random;
 
 public class RedditCommands extends ListenerAdapter {
 
@@ -20,9 +20,9 @@ public class RedditCommands extends ListenerAdapter {
         String subreddit = args[1];
         try{
             Subreddit sr = reddit.getSubreddit(subreddit);
-            Random rand = new Random();
-            int n = rand.nextInt(30);
-            Link post = sr.getHot(30).get(n);
+            RedditThread post = sr.getRandom();
+            Link info = post.getSubmissionPost().getData();
+            String title = info.getTitle();
         }
         catch (IllegalStateException e){
             EmbedBuilder error = new EmbedBuilder();
@@ -36,11 +36,15 @@ public class RedditCommands extends ListenerAdapter {
             channel.sendMessage(error.build()).queue();
             return;
         }
+        catch (OAuthClientException e){
+            EmbedBuilder error = new EmbedBuilder();
+            error.setTitle(":no_entry: Something went wrong. Istg it wasn't me.");
+            channel.sendMessage(error.build()).queue();
+            return;
+        }
         Subreddit sr = reddit.getSubreddit(subreddit);
-        Random rand = new Random();
-        int n = rand.nextInt(30);
-        Link post = sr.getHot(30).get(n);
-        Link info = post;//post.getSubmissionPost().getData();
+        RedditThread post = sr.getRandom();
+        Link info = post.getSubmissionPost().getData();
         String title = info.getTitle();
         try {
             if (info.getMedia() == null) {
@@ -57,7 +61,7 @@ public class RedditCommands extends ListenerAdapter {
                 embed.setTitle("Random Post: " + subreddit);
                 embed.addField("Title:", title, false);
                 embed.setImage(image);
-                embed.setFooter("Requested by:" + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
+                embed.setFooter("Requested by: " + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
                 channel.sendMessage(embed.build()).queue();
             } else if (!info.getMedia().toString().contains(".gif")) {
                 randomPostTitle(event);
@@ -85,4 +89,5 @@ public class RedditCommands extends ListenerAdapter {
             return;
         }
     }
+
 }

@@ -1,4 +1,4 @@
-package Handlers;
+package AudioHandlers;
 
 
 import javax.sound.sampled.AudioFormat;

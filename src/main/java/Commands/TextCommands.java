@@ -133,7 +133,7 @@ public class TextCommands extends ListenerAdapter{
                 success.setDescription("Messages deleted successfully");
                 success.setImage("https://mtv.mtvnimages.com/uri/mgid:file:http:shared:mtv.com/news/wp-content/uploads/2019/03/Thanos-Snap-1552933559.gif?quality=.8&height=251&width=600");
                 Member user = event.getMember();
-                success.setFooter("Paid by: " + (user.getNickname() == null ? user.getEffectiveName() : user.getNickname()), event.getAuthor().getAvatarUrl());
+                success.setFooter("Requested by: " + (user.getNickname() == null ? user.getEffectiveName() : user.getNickname()), event.getAuthor().getAvatarUrl());
                 event.getChannel().sendMessage(success.build()).queue();
             }
             catch (IllegalArgumentException e){
@@ -158,13 +158,11 @@ public class TextCommands extends ListenerAdapter{
         String[] args = event.getMessage().getContentRaw().split("\\s+");
 
         if (args.length == 1){
-            String avatarURL = event.getMessage().getAuthor().getAvatarUrl();
-
             EmbedBuilder showAvatar = new EmbedBuilder();
             showAvatar.setColor(0x6F3C89);
             showAvatar.setTitle(event.getMessage().getAuthor().getName() + "'s Avatar:");
-            showAvatar.setImage(avatarURL);
-            showAvatar.setFooter("Requested by:" + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
+            Member user = event.getMember();
+            showAvatar.setFooter("Requested by: " + (user.getNickname() == null ? user.getEffectiveName() : user.getNickname()), event.getAuthor().getAvatarUrl());
             event.getChannel().sendMessage(showAvatar.build()).queue();
         }
         else if (args.length == 2){
@@ -176,9 +174,8 @@ public class TextCommands extends ListenerAdapter{
                 showAvatar.setColor(0x6F3C89);
                 showAvatar.setTitle(member.getEffectiveName() + "'s Avatar:");
                 showAvatar.setImage(avatarURL);
-                showAvatar.setFooter("Requested by: " + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
                 Member user = event.getMember();
-                success.setFooter("Paid by: " + (user.getNickname() == null ? user.getEffectiveName() : user.getNickname()), event.getAuthor().getAvatarUrl());
+                showAvatar.setFooter("Requested by: " + (user.getNickname() == null ? user.getEffectiveName() : user.getNickname()), event.getAuthor().getAvatarUrl());
                 event.getChannel().sendMessage(showAvatar.build()).queue();
             }
             catch (IndexOutOfBoundsException e){
@@ -216,7 +213,7 @@ public class TextCommands extends ListenerAdapter{
             userInfo.addField("Game: ", user.getGame() == null ? "N/A" : user.getGame().asRichPresence().getName().equalsIgnoreCase("Spotify") ? "N/A" : user.getGame().asRichPresence().getName(), true);
             userInfo.addField("Listening to: ", user.getGame() == null ? "N/A": !user.getGame().asRichPresence().getName().equalsIgnoreCase("spotify") ? "N/A" : user.getGame().asRichPresence().getDetails(), true);
             userInfo.addField("Artist: ", user.getGame() == null ? "N/A": !user.getGame().asRichPresence().getName().equalsIgnoreCase("spotify") ? "N/A" : user.getGame().asRichPresence().getState(), true);
-            userInfo.setFooter("Requested by: " + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
+            userInfo.setFooter("Requested by: " + (user.getNickname() == null ? user.getEffectiveName() : user.getNickname()), event.getAuthor().getAvatarUrl());
             event.getChannel().sendMessage(userInfo.build()).queue();
         }
         else if (args.length == 2){
@@ -235,7 +232,7 @@ public class TextCommands extends ListenerAdapter{
                 userInfo.addField("Game: ", user.getGame() == null ? "N/A" : user.getGame().isRich() ? "N/A"  : user.getGame().toString(), true);
                 userInfo.addField("Listening to: ", user.getGame() == null ? "N/A": !user.getGame().isRich() ? "N/A" : user.getGame().asRichPresence().getDetails(), true);
                 userInfo.addField("Artist: ", user.getGame() == null ? "N/A": !user.getGame().isRich() ? "N/A" : user.getGame().asRichPresence().getState(), true);
-                userInfo.setFooter("Requested by:" + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
+                userInfo.setFooter("Requested by: " + (user.getNickname() == null ? user.getEffectiveName() : user.getNickname()), event.getAuthor().getAvatarUrl());
                 event.getChannel().sendMessage(userInfo.build()).queue();
 
             }
@@ -299,17 +296,18 @@ public class TextCommands extends ListenerAdapter{
         embed.addField(">join or >j", "The bot will join the voice channel.", false);
         embed.addField(">leave or >l", "The bot will leave the voice channel, and clear the queue.", false);
         embed.addField(">play or >p", "Queues a song using a URL or will search on Youtube if no URL found.", false);
-        embed.addField(">stop", "Stops music and clears queue.", false);
-        embed.addField(">skip or >s", "Skips current song.", false);
-        embed.addField(">pause", "Pauses the current song.", false);
-        embed.addField(">resume", "Resumes a paused song.", false);
-        embed.addField(">song", "Displays info about the current song.", false);
         embed.addField(">queue or >q", "Displays info about the current song, and what songs are in queue.", false);
-        embed.addField(">setvolume or >setv", "Sets the volume from 1-100%.", false);
-        embed.addField(">volume or >v", "Displays the current volume.", false);
-        embed.addField(">seek", "Skips a specified amount of seconds.", false);
+        embed.addField(">resume", "Resumes a paused song.", false);
         embed.addField(">rewind", "Rewinds a specified amount of seconds.", false);
-        embed.setFooter("Requested by: " + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
+        embed.addField(">seek", "Skips a specified amount of seconds.", false);
+        embed.addField(">setvolume or >setv", "Sets the volume from 1-100%.", false);
+        embed.addField(">skip or >s", "Skips current song.", false);
+        embed.addField(">song", "Displays info about the current song.", false);
+        embed.addField(">skip or >s", "Skips current song.", false);
+        embed.addField(">stop", "Stops music and clears queue.", false);
+        embed.addField(">volume or >v", "Displays the current volume.", false);
+        Member user = event.getMember();
+        embed.setFooter("Requested by: " + (user.getNickname() == null ? user.getEffectiveName() : user.getNickname()), event.getAuthor().getAvatarUrl());
         channel.sendMessage(embed.build()).queue();
     }
 
@@ -320,15 +318,19 @@ public class TextCommands extends ListenerAdapter{
 
         embed.setTitle(":orange_book: Text Commands");
         embed.setColor(0x6F3C89);
+        embed.addField(">anime", "Retrieves information about the anime.", false);
         embed.addField(">arrive", "Thanos.", false);
-        embed.addField(">snap #", "Deletes the specified number of messages. Admin permissions needed.", false);
-        embed.addField(">ban @USER #Days", "Bans a user and deletes their messages from the past amount of days. Admin permissions Needed", false);
-        embed.addField(">kick @USER", "Kicks a user. Admin permissions Needed", false);
-        embed.addField(">avatar or >avatar @USER", "Retrieves either your avatar, or the mentioned user's avatar.", false);
-        embed.addField(">info or >info @USER", "Retrieves either your info, or the mentioned user's info.", false);
+        embed.addField(">avatar or >avatar @USER", "Retrieves either your avatar, or the mentioned users avatar.", false);
+        embed.addField(">ban @USER #Days", "Bans a user and deletes their messages from the past amount of days. Admin permissions Needed.", false);
+        embed.addField(">f", "Press to pay respects.", false);
+        embed.addField(">info or >info @USER", "Retrieves either your info, or the mentioned users info.", false);
+        embed.addField(">kick @USER", "Kicks a user. Admin permissions needed.", false);
         embed.addField(">quote", "Gives you a random quote. Prob some weeb shit.", false);
-        embed.addField(">f", "Press to Pay Respects", false);
-        embed.setFooter("Requested by: " + event.getMember().getUser().getName(), event.getAuthor().getAvatarUrl());
+        embed.addField(">reddit or >r", "Gets a random post from the top 30 from hot, from the subreddit of your choosing.", false);
+        embed.addField(">snap #", "Deletes the specified number of messages. Admin permissions needed.", false);
+        embed.addField(">urban", "Retrieves the urban definition of the word.", false);
+        Member user = event.getMember();
+        embed.setFooter("Requested by: " + (user.getNickname() == null ? user.getEffectiveName() : user.getNickname()), event.getAuthor().getAvatarUrl());
         channel.sendMessage(embed.build()).queue();
     }
 }

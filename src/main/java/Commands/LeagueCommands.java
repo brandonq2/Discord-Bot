@@ -60,7 +60,6 @@ public class LeagueCommands {
             embed.addField("Name:", summoner.getName(), false);
             embed.addField("Level:", "" + summoner.getSummonerLevel(), false);
             channel.sendMessage(embed.build()).queue();
-            System.out.println(summoner.getProfileIconId());
         }
         catch (RiotApiException e){
             System.out.println(e.getMessage());

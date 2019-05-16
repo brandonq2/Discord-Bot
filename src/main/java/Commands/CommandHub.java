@@ -2,7 +2,10 @@ package Commands;
 
 import MainFiles.DiscordBot;
 import net.dv8tion.jda.core.Permission;
+
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
+import net.dv8tion.jda.core.events.message.guild.react.GuildMessageReactionAddEvent;
+import net.dv8tion.jda.core.events.message.react.MessageReactionAddEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 
 public class CommandHub extends ListenerAdapter {
@@ -99,6 +102,13 @@ public class CommandHub extends ListenerAdapter {
         }
         else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "manga")){
             anime.getManga(event);
+        }
+    }
+
+    @Override
+    public void onMessageReactionAdd(MessageReactionAddEvent event) {
+        if (event.getReactionEmote().getName().equals("\uD83D\uDCCC")){
+            event.getChannel().pinMessageById(event.getMessageId()).queue();
         }
     }
 }

@@ -97,5 +97,8 @@ public class CommandHub extends ListenerAdapter {
         else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "anime")){
             anime.getAnime(event);
         }
+        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "manga")){
+            anime.getManga(event);
+        }
     }
 }

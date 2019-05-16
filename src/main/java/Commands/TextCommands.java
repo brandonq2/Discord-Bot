@@ -321,13 +321,14 @@ public class TextCommands extends ListenerAdapter{
         embed.addField(">anime", "Retrieves information about the anime.", false);
         embed.addField(">arrive", "Thanos.", false);
         embed.addField(">avatar or >avatar @USER", "Retrieves either your avatar, or the mentioned users avatar.", false);
-        embed.addField(">ban @USER #Days", "Bans a user and deletes their messages from the past amount of days. Admin permissions Needed.", false);
+        embed.addField(">ban @USER #Days", "Bans a user and deletes their messages from the past amount of days. **Admin permissions needed**.", false);
         embed.addField(">f", "Press to pay respects.", false);
         embed.addField(">info or >info @USER", "Retrieves either your info, or the mentioned users info.", false);
-        embed.addField(">kick @USER", "Kicks a user. Admin permissions needed.", false);
+        embed.addField(">kick @USER", "Kicks a user. **Admin permissions needed**.", false);
+        embed.addField(">manga", "Retrieves information about the manga.", false);
         embed.addField(">quote", "Gives you a random quote. Prob some weeb shit.", false);
-        embed.addField(">reddit or >r", "Gets a random post from the top 30 from hot, from the subreddit of your choosing.", false);
-        embed.addField(">snap #", "Deletes the specified number of messages. Admin permissions needed.", false);
+        embed.addField(">reddit or >r", "Gets a random post from the subreddit of your choosing.", false);
+        embed.addField(">snap #", "Deletes the specified number of messages. **Admin permissions needed**.", false);
         embed.addField(">urban", "Retrieves the urban definition of the word.", false);
         Member user = event.getMember();
         embed.setFooter("Requested by: " + (user.getNickname() == null ? user.getEffectiveName() : user.getNickname()), event.getAuthor().getAvatarUrl());

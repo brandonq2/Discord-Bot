@@ -10,6 +10,47 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/main/java/Commands/MusicCommands.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="20">
+                    <caret line="204" column="54" selection-start-line="204" selection-start-column="54" selection-end-line="204" selection-end-column="54" />
+                    <folding>
+                      <element signature="imports" expanded="true" />
+                      <element signature="method#join#0;class#MusicCommands#0" />
+                      <element signature="method#leave#0;class#MusicCommands#0" />
+                      <element signature="method#playSong#0;class#MusicCommands#0" />
+                      <element signature="method#stop#0;class#MusicCommands#0" />
+                      <element signature="method#pause#0;class#MusicCommands#0" />
+                      <element signature="method#resume#0;class#MusicCommands#0" />
+                      <element signature="method#queue#0;class#MusicCommands#0" />
+                      <element signature="method#skip#0;class#MusicCommands#0" />
+                      <element signature="method#joinVolume#0;class#MusicCommands#0" />
+                      <element signature="method#checkVolume#0;class#MusicCommands#0" />
+                      <element signature="method#userVolume#0;class#MusicCommands#0" />
+                      <element signature="method#seek#0;class#MusicCommands#0" />
+                      <element signature="method#rewind#0;class#MusicCommands#0" />
+                      <element signature="method#checkConnected#0;class#MusicCommands#0" />
+                      <element signature="method#checkBotConnected#0;class#MusicCommands#0" />
+                      <element signature="method#checkIfPlaying#0;class#MusicCommands#0" />
+                      <element signature="method#URLCheck#0;class#MusicCommands#0" />
+                      <element signature="method#getThumbnail#0;class#MusicCommands#0" />
+                      <element signature="method#formatTime#0;class#MusicCommands#0" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="FUSProjectUsageTrigger">
     <session id="582120527">
       <usages-collector id="statistics.lifecycle.project">
@@ -56,7 +97,7 @@
         <counts>
           <entry key="class" value="2" />
           <entry key="dummy" value="17" />
-          <entry key="java" value="23147" />
+          <entry key="java" value="23880" />
           <entry key="txt" value="260" />
           <entry key="xml" value="178" />
         </counts>
@@ -64,26 +105,26 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="2" />
-          <entry key="JAVA" value="23147" />
+          <entry key="JAVA" value="23880" />
           <entry key="PLAIN_TEXT" value="277" />
           <entry key="XML" value="178" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="10" />
+          <entry key="class" value="12" />
           <entry key="gitattributes" value="1" />
           <entry key="iml" value="5" />
-          <entry key="java" value="115" />
+          <entry key="java" value="116" />
           <entry key="txt" value="1" />
           <entry key="xml" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="10" />
+          <entry key="CLASS" value="12" />
           <entry key="IDEA_MODULE" value="5" />
-          <entry key="JAVA" value="115" />
+          <entry key="JAVA" value="116" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="XML" value="19" />
         </counts>
@@ -95,10 +136,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Commands/AnimeCommands.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="84" column="40" lean-forward="true" selection-start-line="84" selection-start-column="40" selection-end-line="84" selection-end-column="40" />
+            <state relative-caret-position="359">
+              <caret line="78" column="118" lean-forward="true" selection-start-line="78" selection-start-column="118" selection-end-line="78" selection-end-column="118" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#getManga#0;class#AnimeCommands#0" />
               </folding>
             </state>
           </provider>
@@ -107,8 +149,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Commands/CommandHub.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="97" column="34" lean-forward="true" selection-start-line="97" selection-start-column="34" selection-end-line="97" selection-end-column="34" />
+            <state relative-caret-position="375">
+              <caret line="100" column="27" selection-start-line="100" selection-start-column="27" selection-end-line="100" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -119,51 +161,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Commands/TextCommands.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="178" column="17" lean-forward="true" selection-start-line="178" selection-start-column="16" selection-end-line="179" selection-end-column="167" />
+            <state relative-caret-position="255">
+              <caret line="323" column="141" selection-start-line="323" selection-start-column="141" selection-end-line="323" selection-end-column="141" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#arrive#0;class#TextCommands#0" />
                 <element signature="method#ban#0;class#TextCommands#0" />
                 <element signature="method#kick#0;class#TextCommands#0" />
                 <element signature="method#snapMessages#0;class#TextCommands#0" />
+                <element signature="method#getAvatar#0;class#TextCommands#0" />
                 <element signature="method#getUserInfo#0;class#TextCommands#0" />
                 <element signature="method#randomQuote#0;class#TextCommands#0" />
                 <element signature="method#payRespects#0;class#TextCommands#0" />
                 <element signature="method#musicHelp#0;class#TextCommands#0" />
-                <element signature="method#textHelp#0;class#TextCommands#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Commands/MusicCommands.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="204" column="54" selection-start-line="204" selection-start-column="54" selection-end-line="204" selection-end-column="54" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#join#0;class#MusicCommands#0" />
-                <element signature="method#leave#0;class#MusicCommands#0" />
-                <element signature="method#playSong#0;class#MusicCommands#0" />
-                <element signature="method#stop#0;class#MusicCommands#0" />
-                <element signature="method#pause#0;class#MusicCommands#0" />
-                <element signature="method#resume#0;class#MusicCommands#0" />
-                <element signature="method#queue#0;class#MusicCommands#0" />
-                <element signature="method#skip#0;class#MusicCommands#0" />
-                <element signature="method#currentSong#0;class#MusicCommands#0" />
-                <element signature="method#joinVolume#0;class#MusicCommands#0" />
-                <element signature="method#checkVolume#0;class#MusicCommands#0" />
-                <element signature="method#userVolume#0;class#MusicCommands#0" />
-                <element signature="method#seek#0;class#MusicCommands#0" />
-                <element signature="method#rewind#0;class#MusicCommands#0" />
-                <element signature="method#checkConnected#0;class#MusicCommands#0" />
-                <element signature="method#checkBotConnected#0;class#MusicCommands#0" />
-                <element signature="method#checkIfPlaying#0;class#MusicCommands#0" />
-                <element signature="method#URLCheck#0;class#MusicCommands#0" />
-                <element signature="method#getThumbnail#0;class#MusicCommands#0" />
-                <element signature="method#formatTime#0;class#MusicCommands#0" />
               </folding>
             </state>
           </provider>
@@ -224,7 +234,6 @@
         <option value="$PROJECT_DIR$/src/main/java/MainFiles/DiscordBot.java" />
         <option value="$PROJECT_DIR$/src/main/java/Handlers/PlayerManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/Commands/UrbanDictiionaryCommands.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Commands/TextCommands.java" />
         <option value="$PROJECT_DIR$/src/main/java/Commands/UrbanDictionaryCommands.java" />
         <option value="$PROJECT_DIR$/src/main/java/Commands/LyricCommands.java" />
         <option value="$PROJECT_DIR$/src/main/java/Commands/RedditCommands.java" />
@@ -232,8 +241,9 @@
         <option value="$PROJECT_DIR$/src/main/java/Commands/SpotifyCommands.java" />
         <option value="$PROJECT_DIR$/src/main/java/Commands/InstagramCommands.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/Commands/CommandHub.java" />
         <option value="$PROJECT_DIR$/src/main/java/Commands/MusicCommands.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Commands/CommandHub.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Commands/TextCommands.java" />
         <option value="$PROJECT_DIR$/src/main/java/Commands/AnimeCommands.java" />
       </list>
     </option>
@@ -318,7 +328,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557961786607" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557965232905" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../libconnector.so" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -379,12 +389,12 @@
       <workItem from="1557803109498" duration="14941000" />
       <workItem from="1557870202286" duration="13576000" />
       <workItem from="1557894563936" duration="7712000" />
-      <workItem from="1557955639862" duration="5962000" />
+      <workItem from="1557955639862" duration="9956000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95313000" />
+    <option name="totallyTimeSpent" value="99307000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -429,8 +439,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Music/Join.java" />
-    <entry file="file://$PROJECT_DIR$/src/Commands/ICommand.java" />
     <entry file="file://$PROJECT_DIR$/src/AudioSendHandler.java" />
     <entry file="file://$PROJECT_DIR$/.gitattributes">
       <provider selected="true" editor-type-id="text-editor" />
@@ -708,16 +716,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Commands/CommandHub.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="97" column="34" lean-forward="true" selection-start-line="97" selection-start-column="34" selection-end-line="97" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1860">
@@ -727,7 +725,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Commands/MusicCommands.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
+        <state relative-caret-position="20">
           <caret line="204" column="54" selection-start-line="204" selection-start-column="54" selection-end-line="204" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -739,7 +737,6 @@
             <element signature="method#resume#0;class#MusicCommands#0" />
             <element signature="method#queue#0;class#MusicCommands#0" />
             <element signature="method#skip#0;class#MusicCommands#0" />
-            <element signature="method#currentSong#0;class#MusicCommands#0" />
             <element signature="method#joinVolume#0;class#MusicCommands#0" />
             <element signature="method#checkVolume#0;class#MusicCommands#0" />
             <element signature="method#userVolume#0;class#MusicCommands#0" />
@@ -755,31 +752,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/Doomsdayrs/Jikan4java/1.0.0/Jikan4java-1.0.0.jar!/com/github/Doomsdayrs/Jikan4java/types/Main/Manga/Manga.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-805">
+          <caret line="80" column="30" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/Doomsdayrs/Jikan4java/1.0.0/Jikan4java-1.0.0.jar!/com/github/Doomsdayrs/Jikan4java/types/Support/Authors.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Commands/CommandHub.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="100" column="27" selection-start-line="100" selection-start-column="27" selection-end-line="100" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Commands/TextCommands.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="178" column="17" lean-forward="true" selection-start-line="178" selection-start-column="16" selection-end-line="179" selection-end-column="167" />
+        <state relative-caret-position="255">
+          <caret line="323" column="141" selection-start-line="323" selection-start-column="141" selection-end-line="323" selection-end-column="141" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#arrive#0;class#TextCommands#0" />
             <element signature="method#ban#0;class#TextCommands#0" />
             <element signature="method#kick#0;class#TextCommands#0" />
             <element signature="method#snapMessages#0;class#TextCommands#0" />
+            <element signature="method#getAvatar#0;class#TextCommands#0" />
             <element signature="method#getUserInfo#0;class#TextCommands#0" />
             <element signature="method#randomQuote#0;class#TextCommands#0" />
             <element signature="method#payRespects#0;class#TextCommands#0" />
             <element signature="method#musicHelp#0;class#TextCommands#0" />
-            <element signature="method#textHelp#0;class#TextCommands#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Commands/AnimeCommands.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="84" column="40" lean-forward="true" selection-start-line="84" selection-start-column="40" selection-end-line="84" selection-end-column="40" />
+        <state relative-caret-position="359">
+          <caret line="78" column="118" lean-forward="true" selection-start-line="78" selection-start-column="118" selection-end-line="78" selection-end-column="118" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#getManga#0;class#AnimeCommands#0" />
           </folding>
         </state>
       </provider>

@@ -43,20 +43,20 @@
     <session id="1104371313">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
+          <entry key="project.closed" value="12" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="5" />
-          <entry key="project.open.time.6" value="4" />
+          <entry key="project.open.time.6" value="5" />
           <entry key="project.open.time.7" value="2" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="class" value="2" />
           <entry key="dummy" value="17" />
-          <entry key="java" value="24625" />
+          <entry key="java" value="24762" />
           <entry key="txt" value="260" />
           <entry key="xml" value="180" />
         </counts>
@@ -64,7 +64,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="2" />
-          <entry key="JAVA" value="24625" />
+          <entry key="JAVA" value="24762" />
           <entry key="PLAIN_TEXT" value="277" />
           <entry key="XML" value="180" />
         </counts>
@@ -73,30 +73,30 @@
         <counts>
           <entry key="class" value="13" />
           <entry key="gitattributes" value="1" />
-          <entry key="iml" value="6" />
-          <entry key="java" value="123" />
+          <entry key="iml" value="7" />
+          <entry key="java" value="131" />
           <entry key="txt" value="1" />
-          <entry key="xml" value="20" />
+          <entry key="xml" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="13" />
-          <entry key="IDEA_MODULE" value="6" />
-          <entry key="JAVA" value="123" />
+          <entry key="IDEA_MODULE" value="7" />
+          <entry key="JAVA" value="131" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="XML" value="20" />
+          <entry key="XML" value="21" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/MainFiles/DiscordBot.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Commands/LeagueCommands.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="15" column="66" selection-start-line="15" selection-start-column="66" selection-end-line="15" selection-end-column="66" />
+            <state relative-caret-position="239">
+              <caret line="13" column="65" selection-start-line="13" selection-start-column="65" selection-end-line="13" selection-end-column="65" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,14 +105,62 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Commands/LeagueCommands.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/MainFiles/DiscordBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="13" column="64" lean-forward="true" selection-start-line="13" selection-start-column="64" selection-end-line="13" selection-end-column="64" />
+            <state relative-caret-position="220">
+              <caret line="11" column="24" selection-start-line="11" selection-end-line="12" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#leagueInfo#0;class#LeagueCommands#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Commands/TextCommands.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="428">
+              <caret line="313" column="57" selection-start-line="313" selection-start-column="57" selection-end-line="313" selection-end-column="57" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#arrive#0;class#TextCommands#0" />
+                <element signature="method#ban#0;class#TextCommands#0" />
+                <element signature="method#kick#0;class#TextCommands#0" />
+                <element signature="method#snapMessages#0;class#TextCommands#0" />
+                <element signature="method#getAvatar#0;class#TextCommands#0" />
+                <element signature="method#getUserInfo#0;class#TextCommands#0" />
+                <element signature="method#randomQuote#0;class#TextCommands#0" />
+                <element signature="method#payRespects#0;class#TextCommands#0" />
+                <element signature="method#musicHelp#0;class#TextCommands#0" />
+                <element signature="method#textHelp#0;class#TextCommands#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1560">
+              <caret line="89" column="21" selection-start-line="89" selection-start-column="21" selection-end-line="89" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Commands/MusicCommands.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3720">
+              <caret line="204" column="54" selection-start-line="204" selection-start-column="54" selection-end-line="204" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Commands/UrbanDictionaryCommands.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -120,8 +168,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/MainFiles/yeet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="60">
+              <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -171,20 +219,20 @@
         <option value="$PROJECT_DIR$/src/main/java/Handlers/GuildMusicManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/Handlers/PlayerManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/Commands/UrbanDictiionaryCommands.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Commands/UrbanDictionaryCommands.java" />
         <option value="$PROJECT_DIR$/src/main/java/Commands/LyricCommands.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Commands/RedditCommands.java" />
         <option value="$PROJECT_DIR$/src/main/java/Commands/SpotifyCommands.java" />
         <option value="$PROJECT_DIR$/src/main/java/Commands/InstagramCommands.java" />
         <option value="$PROJECT_DIR$/src/main/java/Commands/MusicCommands.java" />
         <option value="$PROJECT_DIR$/src/main/java/Commands/TextCommands.java" />
         <option value="$PROJECT_DIR$/src/main/java/Commands/AnimeCommands.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Commands/LeagueCommands.java" />
         <option value="$PROJECT_DIR$/src/main/java/Commands/PokemonCommands.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/Commands/CommandHub.java" />
-        <option value="$PROJECT_DIR$/src/main/java/MainFiles/yeet.java" />
         <option value="$PROJECT_DIR$/src/main/java/MainFiles/DiscordBot.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Commands/LeagueCommands.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Commands/RedditCommands.java" />
+        <option value="$PROJECT_DIR$/src/main/java/MainFiles/yeet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Commands/UrbanDictionaryCommands.java" />
       </list>
     </option>
   </component>
@@ -211,8 +259,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="97" />
-    <option name="y" value="-10" />
+    <option name="x" value="142" />
+    <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1017" />
   </component>
@@ -248,22 +296,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Discord-Bot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Discord-Bot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Commands" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Discord-Bot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Discord-Bot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="MainFiles" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -276,7 +308,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558064524898" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558071286087" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../libconnector.so" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -339,18 +371,18 @@
       <workItem from="1557894563936" duration="7712000" />
       <workItem from="1557955639862" duration="14366000" />
       <workItem from="1557979585680" duration="618000" />
-      <workItem from="1558064078622" duration="259000" />
+      <workItem from="1558064078622" duration="1874000" />
+      <workItem from="1558314427259" duration="913000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104594000" />
+    <option name="totallyTimeSpent" value="107122000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15548456" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.157082" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -359,7 +391,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32864866" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3145946" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -568,13 +600,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Commands/LyricCommands.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Commands/SpotifyCommands.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Commands/RedditCommands.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="16" column="64" selection-start-line="16" selection-start-column="64" selection-end-line="16" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/sachinhandiekar/jInstagram/1.2.2/jInstagram-1.2.2.jar!/org/jinstagram/Instagram.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -604,24 +629,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Commands/MusicCommands.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="204" column="54" selection-start-line="204" selection-start-column="54" selection-end-line="204" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Commands/AnimeCommands.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
           <caret line="71" column="93" selection-start-line="71" selection-start-column="44" selection-end-line="71" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Discord Bot.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -636,27 +647,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Commands/UrbanDictionaryCommands.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="701">
-          <caret line="42" column="19" lean-forward="true" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Commands/TextCommands.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="719">
-          <caret line="313" column="57" selection-start-line="313" selection-start-column="57" selection-end-line="313" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="89" column="21" selection-start-line="89" selection-start-column="21" selection-end-line="89" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/squareup/retrofit2/converter-gson/2.1.0/converter-gson-2.1.0.jar!/retrofit2/converter/gson/GsonResponseBodyConverter.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
@@ -664,31 +654,85 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Discord Bot.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Commands/RedditCommands.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Commands/LeagueCommands.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="13" column="64" lean-forward="true" selection-start-line="13" selection-start-column="64" selection-end-line="13" selection-end-column="64" />
+        <state relative-caret-position="239">
+          <caret line="13" column="65" selection-start-line="13" selection-start-column="65" selection-end-line="13" selection-end-column="65" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#leagueInfo#0;class#LeagueCommands#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Commands/MusicCommands.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3720">
+          <caret line="204" column="54" selection-start-line="204" selection-start-column="54" selection-end-line="204" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/MainFiles/DiscordBot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="24" selection-start-line="11" selection-end-line="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MainFiles/yeet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="60">
+          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MainFiles/DiscordBot.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Commands/UrbanDictionaryCommands.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="66" selection-start-line="15" selection-start-column="66" selection-end-line="15" selection-end-column="66" />
+        <state relative-caret-position="200">
+          <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Commands/TextCommands.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="313" column="57" selection-start-line="313" selection-start-column="57" selection-end-line="313" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#arrive#0;class#TextCommands#0" />
+            <element signature="method#ban#0;class#TextCommands#0" />
+            <element signature="method#kick#0;class#TextCommands#0" />
+            <element signature="method#snapMessages#0;class#TextCommands#0" />
+            <element signature="method#getAvatar#0;class#TextCommands#0" />
+            <element signature="method#getUserInfo#0;class#TextCommands#0" />
+            <element signature="method#randomQuote#0;class#TextCommands#0" />
+            <element signature="method#payRespects#0;class#TextCommands#0" />
+            <element signature="method#musicHelp#0;class#TextCommands#0" />
+            <element signature="method#textHelp#0;class#TextCommands#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1560">
+          <caret line="89" column="21" selection-start-line="89" selection-start-column="21" selection-end-line="89" selection-end-column="21" />
         </state>
       </provider>
     </entry>

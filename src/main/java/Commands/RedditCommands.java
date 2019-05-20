@@ -12,7 +12,7 @@ import net.dv8tion.jda.core.hooks.ListenerAdapter;
 
 public class RedditCommands extends ListenerAdapter {
 
-    private Reddit reddit = RedditApi.getRedditInstance("spikenrexrexnspike");
+    private Reddit reddit = RedditApi.getRedditInstance("hello");
 
     public void randomPostTitle(GuildMessageReceivedEvent event){
         String[] args = event.getMessage().getContentRaw().split("\\s+");

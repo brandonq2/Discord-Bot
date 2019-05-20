@@ -1,5 +1,6 @@
 package Commands;
 
+import MainFiles.yeet;
 import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
@@ -7,9 +8,12 @@ import UrbanAPI.UrbanAPI;
 import UrbanAPI.UrbanException;
 
 public class UrbanDictionaryCommands extends ListenerAdapter {
+    public yeet yeet = new yeet();
+
     public void urbanDefine(GuildMessageReceivedEvent event){
+
         String[] args = event.getMessage().getContentRaw().split("\\s+");
-        UrbanAPI api = new UrbanAPI("0adf3082dbmshdcc359339d6fb2ap10691ajsn5f1cd1cda034");
+        UrbanAPI api = new UrbanAPI(yeet.urban);
         String word = "";
         EmbedBuilder embed = new EmbedBuilder();
 

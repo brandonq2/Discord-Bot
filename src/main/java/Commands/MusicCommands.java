@@ -4,6 +4,7 @@ import AudioHandlers.GuildMusicManager;
 import AudioHandlers.PlayerManager;
 import AudioHandlers.TrackScheduler;
 import com.sedmelluq.discord.lavaplayer.player.AudioPlayer;
+import com.sedmelluq.discord.lavaplayer.player.AudioPlayerOptions;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrackInfo;
 import net.dv8tion.jda.core.EmbedBuilder;

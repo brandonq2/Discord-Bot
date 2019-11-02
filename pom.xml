@@ -9,9 +9,7 @@
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
     </properties>
-    <groupId>groupId</groupId>
-    <artifactId>Discord-Bot</artifactId>
-    <version>1.0-SNAPSHOT</version>
+
     <repositories>
         <repository>
             <id>central</id>

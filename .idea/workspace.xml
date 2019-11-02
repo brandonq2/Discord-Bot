@@ -56,7 +56,7 @@
         <counts>
           <entry key="class" value="2" />
           <entry key="dummy" value="17" />
-          <entry key="java" value="24966" />
+          <entry key="java" value="24989" />
           <entry key="txt" value="260" />
           <entry key="xml" value="197" />
         </counts>
@@ -64,7 +64,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="2" />
-          <entry key="JAVA" value="24966" />
+          <entry key="JAVA" value="24989" />
           <entry key="PLAIN_TEXT" value="277" />
           <entry key="XML" value="197" />
         </counts>
@@ -74,7 +74,7 @@
           <entry key="class" value="13" />
           <entry key="gitattributes" value="1" />
           <entry key="iml" value="8" />
-          <entry key="java" value="138" />
+          <entry key="java" value="139" />
           <entry key="txt" value="1" />
           <entry key="xml" value="22" />
         </counts>
@@ -83,7 +83,7 @@
         <counts>
           <entry key="CLASS" value="13" />
           <entry key="IDEA_MODULE" value="8" />
-          <entry key="JAVA" value="138" />
+          <entry key="JAVA" value="139" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="XML" value="22" />
         </counts>
@@ -116,8 +116,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="33" column="32" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="32" />
+            <state relative-caret-position="100">
+              <caret line="11" selection-start-line="11" selection-end-line="13" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/AudioHandlers/PlayerManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="11" column="44" lean-forward="true" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -134,7 +143,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Commands/MusicCommands.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5880">
+            <state relative-caret-position="839">
               <caret line="313" column="27" selection-start-line="313" selection-start-column="27" selection-end-line="313" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -146,7 +155,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/AudioHandlers/AudioSendHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="980">
+            <state relative-caret-position="839">
               <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
             </state>
           </provider>
@@ -210,8 +219,8 @@
         <option value="$PROJECT_DIR$/src/main/java/Commands/RedditCommands.java" />
         <option value="$PROJECT_DIR$/src/main/java/MainFiles/yeet.java" />
         <option value="$PROJECT_DIR$/src/main/java/Commands/UrbanDictionaryCommands.java" />
-        <option value="$PROJECT_DIR$/src/main/java/AudioHandlers/PlayerManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/Commands/MusicCommands.java" />
+        <option value="$PROJECT_DIR$/src/main/java/AudioHandlers/PlayerManager.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
@@ -238,9 +247,9 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="330" />
-    <option name="y" value="87" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1853" />
+    <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1017" />
   </component>
@@ -274,6 +283,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Discord-Bot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Discord-Bot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="AudioHandlers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -357,17 +374,18 @@
       <workItem from="1572582277178" duration="304000" />
       <workItem from="1572584150383" duration="37000" />
       <workItem from="1572584648826" duration="202000" />
-      <workItem from="1572664809877" duration="281000" />
+      <workItem from="1572664809877" duration="604000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110982000" />
+    <option name="totallyTimeSpent" value="111305000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16506922" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16506922" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -376,7 +394,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3145946" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3015544" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -633,6 +651,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+          <folding>
+            <element signature="e#922#923#0" expanded="true" />
+            <element signature="e#979#980#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -647,13 +669,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="49">
           <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/AudioHandlers/PlayerManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
@@ -674,16 +689,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/AudioHandlers/AudioPlayerSendHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/AudioHandlers/AudioSendHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        <state relative-caret-position="839">
+          <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Commands/MusicCommands.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5880">
+        <state relative-caret-position="839">
           <caret line="313" column="27" selection-start-line="313" selection-start-column="27" selection-end-line="313" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -691,17 +706,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/AudioHandlers/AudioSendHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/AudioHandlers/AudioPlayerSendHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="980">
-          <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
+        <state relative-caret-position="180">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/AudioHandlers/PlayerManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="44" lean-forward="true" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="33" column="32" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="32" />
+        <state relative-caret-position="100">
+          <caret line="11" selection-start-line="11" selection-end-line="13" selection-end-column="35" />
         </state>
       </provider>
     </entry>

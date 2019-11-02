@@ -33,7 +33,8 @@
         <dependency>
             <groupId>net.dv8tion</groupId>
             <artifactId>JDA</artifactId>
-            <version>4.0.0</version>
+            <version>4.0.0_55</version>
+            <type>pom</type>
         </dependency>
         <dependency>
             <groupId>com.sedmelluq</groupId>

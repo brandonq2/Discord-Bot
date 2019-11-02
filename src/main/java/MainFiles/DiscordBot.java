@@ -13,7 +13,7 @@ public class DiscordBot{
     public static JDA jda;
     public static String prefix = ">";
     public static void main(String[] args) throws LoginException{
-        jda = new JDABuilder(AccountType.BOT).setToken(yeet.secret).buildAsync();
+        jda = new JDABuilder(AccountType.BOT).setToken(yeet.secret).build();
         jda.getPresence().setGame(Game.playing("Farming Simulator 2019"));
         jda.addEventListener(new CommandHub());
     }

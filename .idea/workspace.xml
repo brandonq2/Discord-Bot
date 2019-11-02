@@ -2,41 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f925879c-ce71-4861-991f-161fef783231" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/Version.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/function/TObjectFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/impl/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/impl/HashFunctions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/impl/PrimeFinder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/impl/hash/TCustomObjectHash.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/impl/hash/THash.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/impl/hash/THashIterator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/impl/hash/THashPrimitiveIterator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/impl/hash/TObjectHash.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/impl/hash/TPrimitiveHash.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/impl/package.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/impl/sync/SynchronizedCollection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/impl/sync/SynchronizedSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/iterator/TAdvancingIterator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/iterator/TIterator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/iterator/TPrimitiveIterator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/iterator/hash/TObjectHashIterator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/list/TLinkable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/list/TLinkableAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/list/linked/TLinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/map/TMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/map/hash/TCustomHashMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/map/hash/THashMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/procedure/TObjectObjectProcedure.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/procedure/TObjectProcedure.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/procedure/array/ToObjectArrayProceedure.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/set/hash/TCustomHashSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/set/hash/THashSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/strategy/HashingStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/strategy/IdentityHashingStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Discord Bot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Discord Bot.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MainFiles/DiscordBot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MainFiles/DiscordBot.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -98,7 +64,7 @@
           <entry key="dummy" value="17" />
           <entry key="java" value="25009" />
           <entry key="txt" value="260" />
-          <entry key="xml" value="197" />
+          <entry key="xml" value="212" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -106,7 +72,7 @@
           <entry key="CLASS" value="2" />
           <entry key="JAVA" value="25009" />
           <entry key="PLAIN_TEXT" value="277" />
-          <entry key="XML" value="197" />
+          <entry key="XML" value="212" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -144,7 +110,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/MainFiles/DiscordBot.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="160">
@@ -156,11 +122,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+            <state relative-caret-position="280">
+              <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -224,8 +190,8 @@
         <option value="$PROJECT_DIR$/src/main/java/Commands/UrbanDictionaryCommands.java" />
         <option value="$PROJECT_DIR$/src/main/java/Commands/MusicCommands.java" />
         <option value="$PROJECT_DIR$/src/main/java/AudioHandlers/PlayerManager.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/MainFiles/DiscordBot.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -251,7 +217,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-9" />
     <option name="y" value="-14" />
     <option name="width" value="1936" />
@@ -301,7 +267,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572667843636" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572668076600" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -371,15 +337,16 @@
       <workItem from="1572582277178" duration="304000" />
       <workItem from="1572584150383" duration="37000" />
       <workItem from="1572584648826" duration="202000" />
-      <workItem from="1572664809877" duration="3263000" />
+      <workItem from="1572664809877" duration="3693000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113964000" />
+    <option name="totallyTimeSpent" value="114394000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16506922" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -726,13 +693,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MainFiles/DiscordBot.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -740,6 +700,13 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
         </state>
       </provider>
     </entry>

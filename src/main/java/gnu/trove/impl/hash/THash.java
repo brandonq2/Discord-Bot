@@ -21,6 +21,7 @@
 package gnu.trove.impl.hash;
 
 import gnu.trove.impl.Constants;
+import gnu.trove.impl.HashFunctions;
 import gnu.trove.impl.PrimeFinder;
 
 import java.io.Externalizable;
@@ -67,8 +68,8 @@ abstract public class THash implements Externalizable {
 
     /**
      * Determines how full the internal table can become before
-     * rehashing is required. This must be a value in the range: 0.0 &lt;
-     * loadFactor &lt; 1.0.  The default value is 0.5, which is about as
+     * rehashing is required. This must be a value in the range: 0.0 <
+     * loadFactor < 1.0.  The default value is 0.5, which is about as
      * large as you can get in open addressing without hurting
      * performance.  Cf. Knuth, Volume 3., Chapter 6.
      */
@@ -115,52 +116,27 @@ abstract public class THash implements Externalizable {
         this( initialCapacity, DEFAULT_LOAD_FACTOR );
     }
 
+
     /**
      * Creates a new <code>THash</code> instance with a prime capacity
      * at or near the minimum needed to hold <tt>initialCapacity</tt>
      * elements with load factor <tt>loadFactor</tt> without triggering
      * a rehash.
      *
-     * @param initialCapacity a positive <code>int</code> value
-     * @param loadFactor      a positive <code>float</code>
+     * @param initialCapacity an <code>int</code> value
+     * @param loadFactor      a <code>float</code> value
      */
     public THash( int initialCapacity, float loadFactor ) {
         super();
-        if ( initialCapacity < 0 ) {
-            throw new IllegalArgumentException( "negative capacity: " + initialCapacity );
-        } else if ( 0.0f >= loadFactor ) {
-            throw new IllegalArgumentException( "load factor out of range: " + loadFactor );
-        }
         _loadFactor = loadFactor;
 
         // Through testing, the load factor (especially the default load factor) has been
         // found to be a pretty good starting auto-compaction factor.
         _autoCompactionFactor = loadFactor;
 
-        // Floats have 24 significand bits, causing loss of precision for initial capacities > ~17 million
-        setUp( saturatedCast( fastCeil( initialCapacity / (double) loadFactor ) ) );
+        setUp( HashFunctions.fastCeil( initialCapacity / loadFactor ) );
     }
 
-    /*
-     * In profiling, it has been found to be faster to have our own local implementation
-     * of "ceil" rather than to call to {@link Math#ceil(double)}.
-     *
-     * precondition: v > 0
-     */
-    protected static long fastCeil( double v ) {
-        long possible_result = ( long ) v;
-        if ( v - possible_result > 0 ) possible_result++;
-        return possible_result;
-    }
-
-    /* precondition: v > 0 */
-    protected static int saturatedCast(long v) {
-        int r = (int) (v & 0x7fffffff); // removing sign bit
-        if (r != v) {
-            return Integer.MAX_VALUE;
-        }
-        return r;
-    }
 
     /**
      * Tells whether this set is currently holding any elements.
@@ -188,7 +164,7 @@ abstract public class THash implements Externalizable {
 
     /**
      * Ensure that this hashtable has sufficient capacity to hold
-     * <tt>desiredCapacity</tt> <b>additional</b> elements without
+     * <tt>desiredCapacity<tt> <b>additional</b> elements without
      * requiring a rehash.  This is a tuning method you can call
      * before doing a large insert.
      *
@@ -196,11 +172,8 @@ abstract public class THash implements Externalizable {
      */
     public void ensureCapacity( int desiredCapacity ) {
         if ( desiredCapacity > ( _maxSize - size() ) ) {
-            rehash( PrimeFinder.nextPrime(Math.max( _size + 1,
-               saturatedCast( fastCeil( ( desiredCapacity + _size ) / (double) _loadFactor) + 1 ) ) ) );
-            if ( capacity() >= PrimeFinder.largestPrime ) {
-                _loadFactor = 1.0f;
-            }
+			rehash( PrimeFinder.nextPrime( Math.max( size() + 1,
+				HashFunctions.fastCeil( ( desiredCapacity + size() ) / _loadFactor ) + 1 ) ) );
             computeMaxSize( capacity() );
         }
     }
@@ -213,10 +186,11 @@ abstract public class THash implements Externalizable {
      * operations and plan to do a lot of queries or insertions or
      * iteration, it is a good idea to invoke this method.  Doing so
      * will accomplish two things:
-     * <br>
+     * <p/>
      * <ol>
      * <li> You'll free memory allocated to the table but no
      * longer needed because of the remove()s.</li>
+     * <p/>
      * <li> You'll get better query/insert/iterator performance
      * because there won't be any <tt>REMOVED</tt> slots to skip
      * over when probing for indices in the table.</li>
@@ -225,7 +199,7 @@ abstract public class THash implements Externalizable {
     public void compact() {
         // need at least one free spot for open addressing
         rehash( PrimeFinder.nextPrime( Math.max( _size + 1,
-	        saturatedCast( fastCeil( _size / (double) _loadFactor ) + 1 ) ) ) );
+	        HashFunctions.fastCeil( size() / _loadFactor ) + 1 ) ) );
         computeMaxSize( capacity() );
 
         // If auto-compaction is enabled, re-determine the compaction interval
@@ -241,7 +215,7 @@ abstract public class THash implements Externalizable {
      * If the value is non-zero, the number of removes that need to occur for
      * auto-compaction is the size of table at the time of the previous compaction
      * (or the initial capacity) multiplied by this factor.
-     * <br>
+     * <p/>
      * Setting this value to zero will disable auto-compaction.
      *
      * @param factor a <tt>float</tt> that indicates the auto-compaction factor
@@ -258,7 +232,7 @@ abstract public class THash implements Externalizable {
     /**
      * @see #setAutoCompactionFactor
      *
-     * @return a <tt>float</tt> that represents the auto-compaction factor.
+     * @return a <<tt>float</tt> that represents the auto-compaction factor.
      */
     public float getAutoCompactionFactor() {
         return _autoCompactionFactor;
@@ -319,9 +293,6 @@ abstract public class THash implements Externalizable {
         int capacity;
 
         capacity = PrimeFinder.nextPrime( initialCapacity );
-        if ( capacity >= PrimeFinder.largestPrime ) {
-            _loadFactor = 1.0f;
-        }
         computeMaxSize( capacity );
         computeNextAutoCompactionAmount( initialCapacity );
 
@@ -445,14 +416,14 @@ abstract public class THash implements Externalizable {
 
         // LOAD FACTOR
         float old_factor = _loadFactor;
-        _loadFactor = Math.abs( in.readFloat() );
+        _loadFactor = in.readFloat();
 
         // AUTO COMPACTION LOAD FACTOR
         _autoCompactionFactor = in.readFloat();
 
         // If we change the laod factor from the default, re-setup
         if ( old_factor != _loadFactor ) {
-            setUp( saturatedCast((long) Math.ceil(DEFAULT_CAPACITY / (double) _loadFactor)) );
+            setUp( (int) Math.ceil( DEFAULT_CAPACITY / _loadFactor ) );
         }
     }
 }// THash

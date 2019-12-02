@@ -36,10 +36,9 @@ import java.util.*;
 
 
 /**
- * <p>
  * An implementation of the Map interface which uses an open addressed
  * hash table to store its contents.
- * </p>
+ * <p/>
  * Created: Sun Nov  4 08:52:45 2001
  *
  * @author Eric D. Friedman

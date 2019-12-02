@@ -21,26 +21,18 @@
 package gnu.trove;
 
 /**
- * <p>
  * Simple class meant as a possible main class (via manifest) to report the
  * implementation version of the trove4j jar.
- * </p>
- * <p>
+ * <p/>
  * This may be useful to ask feedback WITH build version information
- * </p>
- * <p>
+ * <p/>
  * The Main-Class entry in the manifest.mf should be set during the build as well
  * as the Implementation-Version manifest attribute should be set as well.
- * </p>
- * <p>
+ * <p/>
  * Created by IntelliJ IDEA.
- * <br>
  * User: Johan Parent
- * <br>
  * Date: 3/03/11
- * <br>
  * Time: 22:10
- * </p>
  */
 public class Version {
     public static void main(String[] args) {
@@ -48,10 +40,9 @@ public class Version {
     }
 
     /**
-     * <p>
      * Returns the implementation version of trove4j. Intended for applications
      * wanting to return the version of trove4j they are using
-     * </p>
+     * <p/>
      * NOTE: this method will only return a useful version when working
      * with a trove4j jar as it requires a manifest file
      *

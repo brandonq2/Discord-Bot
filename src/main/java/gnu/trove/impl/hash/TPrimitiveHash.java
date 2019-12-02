@@ -77,21 +77,24 @@ abstract public class TPrimitiveHash extends THash {
      * @param initialCapacity an <code>int</code> value
      */
     public TPrimitiveHash( int initialCapacity ) {
-        super( initialCapacity, DEFAULT_LOAD_FACTOR );
+        this( initialCapacity, DEFAULT_LOAD_FACTOR );
     }
 
 
     /**
      * Creates a new <code>TPrimitiveHash</code> instance with a prime
      * capacity at or near the minimum needed to hold
-     * <tt>initialCapacity</tt> elements with load factor
+     * <tt>initialCapacity<tt> elements with load factor
      * <tt>loadFactor</tt> without triggering a rehash.
      *
      * @param initialCapacity an <code>int</code> value
      * @param loadFactor      a <code>float</code> value
      */
     public TPrimitiveHash( int initialCapacity, float loadFactor ) {
-        super( initialCapacity, loadFactor );
+        super();
+		initialCapacity = Math.max( 1, initialCapacity );
+        _loadFactor = loadFactor;
+        setUp( HashFunctions.fastCeil( initialCapacity / loadFactor ) );
     }
 
 

@@ -3,7 +3,7 @@ package gnu.trove.list;
 /**
  * Simple adapter class implementing {@link TLinkable}, so you don't have to. Example:
  * <pre>
-	private class MyObject extends TLinkableAdapter&lt;MyObject&gt; {
+	private class MyObject extends TLinkableAdapter<MyObject> {
 		private final String value;
 
 		MyObject( String value ) {

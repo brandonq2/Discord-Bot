@@ -23,9 +23,8 @@ import gnu.trove.procedure.TObjectProcedure;
 
 
 /**
- * <p>
  * A procedure which stores each value it receives into a target array.
- * </p>
+ * <p/>
  * Created: Sat Jan 12 10:13:42 2002
  *
  * @author Eric D. Friedman

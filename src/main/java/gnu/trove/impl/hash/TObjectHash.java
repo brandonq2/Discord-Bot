@@ -32,7 +32,7 @@ import java.util.Set;
 
 /**
  * An open addressed hashing implementation for Object types.
- * <br>
+ * <p/>
  * Created: Sun Nov  4 08:56:06 2001
  *
  * @author Eric D. Friedman
@@ -188,6 +188,7 @@ abstract public class TObjectHash<T> extends THash {
      * @param index we start from
      * @param hash
      * @param cur
+     * @return
      */
     private int indexRehashed(Object obj, int index, int hash, Object cur) {
         final Object[] set = _set;
@@ -227,6 +228,7 @@ abstract public class TObjectHash<T> extends THash {
      * <p/>
      * --> this result a simpler loop
      *
+     * @return
      */
     private int indexForNull() {
         int index = 0;
@@ -248,6 +250,7 @@ abstract public class TObjectHash<T> extends THash {
      * changes made to the logic.
      *
      * @param obj
+     * @return
      * @deprecated use {@link #insertKey} instead
      */
     @Deprecated
@@ -256,15 +259,12 @@ abstract public class TObjectHash<T> extends THash {
     }
 
     /**
-     * <p>
      * Locates the index at which <tt>key</tt> can be inserted.  if
      * there is already a value equal()ing <tt>key</tt> in the set,
      * returns that value's index as <tt>-index - 1</tt>.
-     * </p>
-     * <p>
+     * <p/>
      * If a slot is found the value is inserted. When a FREE slot is used the consumeFreeSlot field is
      * set to true. This field should be used in the method invoking insertKey() to pass to postInsertHook()
-     * </p>
      *
      * @param key an <code>Object</code> value
      * @return the index of a FREE slot at which key can be inserted
@@ -302,6 +302,7 @@ abstract public class TObjectHash<T> extends THash {
      * @param index natural index
      * @param hash
      * @param cur   value of first matched slot
+     * @return
      */
     private int insertKeyRehash(T key, int index, int hash, Object cur) {
         final Object[] set = _set;
@@ -365,6 +366,7 @@ abstract public class TObjectHash<T> extends THash {
      * - the probe value is 1 for this case
      * - object identity can be used to match this case
      *
+     * @return
      */
     private int insertKeyForNull() {
         int index = 0;
@@ -519,6 +521,7 @@ abstract public class TObjectHash<T> extends THash {
      *
      * @param keys
      * @param oldSize
+     * @return
      */
     private static String detectKeyLoss(Object[] keys, int oldSize) {
         StringBuilder buf = new StringBuilder();

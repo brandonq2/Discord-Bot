@@ -19,9 +19,8 @@
 package gnu.trove.procedure;
 
 /**
- * <p>
  * Interface for procedures that take two Object parameters.
- * </p>
+ * <p/>
  * Created: Mon Nov  5 22:03:30 2001
  *
  * @author Eric D. Friedman

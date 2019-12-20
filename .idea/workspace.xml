@@ -2,51 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f925879c-ce71-4861-991f-161fef783231" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/junit.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/trove-3.0.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/set/hash/TLinkedHashSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AudioHandlers/PlayerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AudioHandlers/PlayerManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gnu/trove/Version.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/Version.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gnu/trove/function/TObjectFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/function/TObjectFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gnu/trove/impl/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/impl/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gnu/trove/impl/HashFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/impl/HashFunctions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gnu/trove/impl/PrimeFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/impl/PrimeFinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gnu/trove/impl/hash/THash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/impl/hash/THash.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gnu/trove/impl/hash/THashIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/impl/hash/THashIterator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gnu/trove/impl/hash/THashPrimitiveIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/impl/hash/THashPrimitiveIterator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gnu/trove/impl/hash/TObjectHash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/impl/hash/TObjectHash.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gnu/trove/impl/hash/TPrimitiveHash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/impl/hash/TPrimitiveHash.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gnu/trove/impl/package.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/impl/package.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gnu/trove/iterator/TPrimitiveIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/iterator/TPrimitiveIterator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gnu/trove/list/TLinkableAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/list/TLinkableAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gnu/trove/list/linked/TLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/list/linked/TLinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gnu/trove/map/hash/THashMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/map/hash/THashMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gnu/trove/procedure/TObjectObjectProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/procedure/TObjectObjectProcedure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gnu/trove/procedure/array/ToObjectArrayProceedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gnu/trove/procedure/array/ToObjectArrayProceedure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AudioHandlers/PlayerManager$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AudioHandlers/PlayerManager$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AudioHandlers/PlayerManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AudioHandlers/PlayerManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gnu/trove/Version.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gnu/trove/Version.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gnu/trove/impl/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gnu/trove/impl/Constants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gnu/trove/impl/HashFunctions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gnu/trove/impl/HashFunctions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gnu/trove/impl/PrimeFinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gnu/trove/impl/PrimeFinder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gnu/trove/impl/hash/THash.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gnu/trove/impl/hash/THash.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gnu/trove/impl/hash/TObjectHash.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gnu/trove/impl/hash/TObjectHash.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gnu/trove/impl/hash/TPrimitiveHash.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gnu/trove/impl/hash/TPrimitiveHash.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gnu/trove/list/linked/TLinkedList$IteratorImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gnu/trove/list/linked/TLinkedList$IteratorImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gnu/trove/list/linked/TLinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gnu/trove/list/linked/TLinkedList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gnu/trove/map/hash/THashMap$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gnu/trove/map/hash/THashMap$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gnu/trove/map/hash/THashMap$Entry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gnu/trove/map/hash/THashMap$Entry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gnu/trove/map/hash/THashMap$EntryView$EntryIterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gnu/trove/map/hash/THashMap$EntryView$EntryIterator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gnu/trove/map/hash/THashMap$EntryView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gnu/trove/map/hash/THashMap$EntryView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gnu/trove/map/hash/THashMap$EqProcedure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gnu/trove/map/hash/THashMap$EqProcedure.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gnu/trove/map/hash/THashMap$HashProcedure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gnu/trove/map/hash/THashMap$HashProcedure.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gnu/trove/map/hash/THashMap$KeyView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gnu/trove/map/hash/THashMap$KeyView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gnu/trove/map/hash/THashMap$MapBackedView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gnu/trove/map/hash/THashMap$MapBackedView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gnu/trove/map/hash/THashMap$ValueView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gnu/trove/map/hash/THashMap$ValueView$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gnu/trove/map/hash/THashMap$ValueView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gnu/trove/map/hash/THashMap$ValueView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gnu/trove/map/hash/THashMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gnu/trove/map/hash/THashMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gnu/trove/procedure/array/ToObjectArrayProceedure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gnu/trove/procedure/array/ToObjectArrayProceedure.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Commands/CommandHub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Commands/CommandHub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Commands/TextCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Commands/TextCommands.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -95,19 +52,19 @@
         <counts>
           <entry key="project.closed" value="23" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.4" value="2" />
+          <entry key="project.open.time.4" value="3" />
           <entry key="project.open.time.5" value="8" />
           <entry key="project.open.time.6" value="7" />
           <entry key="project.open.time.7" value="5" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.opened" value="25" />
+          <entry key="project.opened" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="class" value="2" />
           <entry key="dummy" value="17" />
-          <entry key="java" value="25498" />
+          <entry key="java" value="25586" />
           <entry key="txt" value="260" />
           <entry key="xml" value="213" />
         </counts>
@@ -115,7 +72,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="2" />
-          <entry key="JAVA" value="25498" />
+          <entry key="JAVA" value="25586" />
           <entry key="PLAIN_TEXT" value="277" />
           <entry key="XML" value="213" />
         </counts>
@@ -125,7 +82,7 @@
           <entry key="class" value="13" />
           <entry key="gitattributes" value="1" />
           <entry key="iml" value="8" />
-          <entry key="java" value="150" />
+          <entry key="java" value="152" />
           <entry key="txt" value="1" />
           <entry key="xml" value="22" />
         </counts>
@@ -134,7 +91,7 @@
         <counts>
           <entry key="CLASS" value="13" />
           <entry key="IDEA_MODULE" value="8" />
-          <entry key="JAVA" value="150" />
+          <entry key="JAVA" value="152" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="XML" value="22" />
         </counts>
@@ -146,8 +103,29 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Commands/MusicCommands.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3961">
+            <state relative-caret-position="-7720">
               <caret line="109" column="21" selection-start-line="109" selection-start-column="21" selection-end-line="109" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Commands/TextCommands.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1819">
+              <caret line="283" column="32" selection-start-line="283" selection-start-column="32" selection-end-line="283" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Commands/CommandHub.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="191">
+              <caret line="32" column="130" selection-start-line="32" selection-start-column="130" selection-end-line="32" selection-end-column="130" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -155,7 +133,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/AudioHandlers/PlayerManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="839">
+            <state relative-caret-position="1380">
               <caret line="87" column="83" selection-start-line="87" selection-start-column="83" selection-end-line="87" selection-end-column="83" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -194,7 +172,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Commands/AnimeCommands.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1160">
+            <state relative-caret-position="-400">
               <caret line="69" column="63" selection-start-line="69" selection-start-column="63" selection-end-line="69" selection-end-column="63" />
             </state>
           </provider>
@@ -249,10 +227,8 @@
         <option value="$PROJECT_DIR$/src/main/java/Commands/LyricCommands.java" />
         <option value="$PROJECT_DIR$/src/main/java/Commands/SpotifyCommands.java" />
         <option value="$PROJECT_DIR$/src/main/java/Commands/InstagramCommands.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Commands/TextCommands.java" />
         <option value="$PROJECT_DIR$/src/main/java/Commands/AnimeCommands.java" />
         <option value="$PROJECT_DIR$/src/main/java/Commands/PokemonCommands.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Commands/CommandHub.java" />
         <option value="$PROJECT_DIR$/src/main/java/Commands/LeagueCommands.java" />
         <option value="$PROJECT_DIR$/src/main/java/Commands/RedditCommands.java" />
         <option value="$PROJECT_DIR$/src/main/java/MainFiles/yeet.java" />
@@ -261,6 +237,8 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/AudioHandlers/PlayerManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/MainFiles/DiscordBot.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Commands/TextCommands.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Commands/CommandHub.java" />
       </list>
     </option>
   </component>
@@ -297,6 +275,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -350,8 +330,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -437,16 +415,18 @@
       <workItem from="1573188882308" duration="3333000" />
       <workItem from="1573357320396" duration="604000" />
       <workItem from="1573529898026" duration="2734000" />
+      <workItem from="1576821887347" duration="1436000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124720000" />
+    <option name="totallyTimeSpent" value="126156000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17465389" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17625134" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -455,7 +435,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3145946" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3145946" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -681,16 +661,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Commands/CommandHub.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="45" column="23" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/AudioHandlers/AudioSendHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="839">
@@ -722,13 +692,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Commands/TextCommands.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="313" column="57" selection-start-line="313" selection-start-column="57" selection-end-line="313" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/AudioHandlers/AudioPlayerSendHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -743,24 +706,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Commands/AnimeCommands.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/AudioHandlers/PlayerManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1160">
-          <caret line="69" column="63" selection-start-line="69" selection-start-column="63" selection-end-line="69" selection-end-column="63" />
+        <state relative-caret-position="1380">
+          <caret line="87" column="83" selection-start-line="87" selection-start-column="83" selection-end-line="87" selection-end-column="83" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/AudioHandlers/TrackScheduler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Commands/TextCommands.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
+        <state relative-caret-position="1819">
+          <caret line="283" column="32" selection-start-line="283" selection-start-column="32" selection-end-line="283" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/AudioHandlers/GuildMusicManager.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Commands/CommandHub.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+        <state relative-caret-position="191">
+          <caret line="32" column="130" selection-start-line="32" selection-start-column="130" selection-end-line="32" selection-end-column="130" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -771,19 +740,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/AudioHandlers/PlayerManager.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/AudioHandlers/GuildMusicManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="839">
-          <caret line="87" column="83" selection-start-line="87" selection-start-column="83" selection-end-line="87" selection-end-column="83" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="300">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/AudioHandlers/TrackScheduler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Commands/AnimeCommands.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-400">
+          <caret line="69" column="63" selection-start-line="69" selection-start-column="63" selection-end-line="69" selection-end-column="63" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Commands/MusicCommands.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3961">
+        <state relative-caret-position="-7720">
           <caret line="109" column="21" selection-start-line="109" selection-start-column="21" selection-end-line="109" selection-end-column="21" />
         </state>
       </provider>

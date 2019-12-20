@@ -279,9 +279,24 @@ public class TextCommands extends ListenerAdapter{
             Member user = event.getMember();
             EmbedBuilder respect = new EmbedBuilder();
             respect.setColor(0x6F3C89);
-            respect.setTitle("You have my respect, " + (user.getNickname() == null ? user.getEffectiveName() : user.getNickname()) + ". When I'm done, half of humanity will still be alive. I hope they remember you.");
+            respect.setTitle("You have my respect, " + (user.getNickname() == null ? user.getEffectiveName() : user.getNickname()));
             respect.setImage("https://media.giphy.com/media/26gR1v0rIDrjSsca4/giphy.gif");
             respect.setFooter("Paid by: " + (user.getNickname() == null ? user.getEffectiveName() : user.getNickname()), event.getAuthor().getAvatarUrl());
+            event.getChannel().sendMessage(respect.build()).queue();
+        }
+    }
+
+    public void warn(GuildMessageReceivedEvent event){
+        String[] args = event.getMessage().getContentRaw().split("\\s+");
+
+        if (args.length == 2){
+            Member user = event.getMember();
+            EmbedBuilder respect = new EmbedBuilder();
+            Member mentioned = event.getMessage().getMentionedMembers().get(0);
+            respect.setColor(0x6F3C89);
+            respect.setTitle("You're strong. But I could snap my fingers, and you'd all cease to exist. User: " + (mentioned.getNickname() == null ? mentioned.getEffectiveName() : mentioned.getNickname()) + " has been warned.");
+            respect.setImage("https://media.giphy.com/media/aqMY57vLdkghi/giphy.gif");
+            respect.setFooter("Warned by: " + (user.getNickname() == null ? user.getEffectiveName() : user.getNickname()), event.getAuthor().getAvatarUrl());
             event.getChannel().sendMessage(respect.build()).queue();
         }
     }

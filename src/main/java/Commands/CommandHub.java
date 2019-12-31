@@ -30,7 +30,7 @@ public class CommandHub extends ListenerAdapter {
         else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "kick") && event.getMember().hasPermission(Permission.ADMINISTRATOR)){
             text.kick(event);
         }
-        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "warn") && event.getMember().hasPermission(Permission.ADMINISTRATOR)){
+        else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "warn")){
             text.warn(event);
         }
         else if (args[0].equalsIgnoreCase(DiscordBot.prefix + "avatar")){

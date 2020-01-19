@@ -52,7 +52,7 @@
         <dependency>
             <groupId>com.github.taycaldwell</groupId>
             <artifactId>riot-api-java</artifactId>
-            <version>4.2.0</version>
+            <version>4.3.0</version>
         </dependency>
         <dependency>
             <groupId>com.sachinhandiekar</groupId>
